@@ -50,7 +50,7 @@ header p{
 
 .sidebar a {
   text-decoration: none;
-  color: #0077cc;
+  color: #cc0044;
 }
 
 .sidebar a:hover {
@@ -71,7 +71,7 @@ iframe {
 
 .custom-link {
     text-decoration: none; /* Removes underline */
-    color: #ffffff; /* Set your desired color (e.g., blue) */
+    color: #bd1493; /* Set your desired color (e.g., blue) */
 }
 
 .custom-link:visited {
