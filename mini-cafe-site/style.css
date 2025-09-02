@@ -44,15 +44,4 @@ footer {
   padding: 15px;
   background-color: #d8a47f;
 }
-ul {
-  list-style: none;
-  padding-left: 0;
-}
 
-li {
-  background-color: #f5e9dc;
-  margin: 8px 0;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
