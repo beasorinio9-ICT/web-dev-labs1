@@ -1,5 +1,6 @@
+/* ===== Global Styles ===== */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
@@ -7,83 +8,135 @@ body {
   color: #333;
 }
 
-/* Header with background image */
+/* ===== Header & Overlay ===== */
 header {
-  background-image: url('images/travel.jpg');
+  background-image: url('images/travel.jpg'); /* Default banner */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   color: white;
-}
-
-/* Dark overlay */
-header::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 0;
+  text-align: center;
+  padding: 4rem 1rem;
 }
 
 header .overlay {
-  position: relative;
-  z-index: 1;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  padding: 2rem;
+  border-radius: 8px;
+  display: inline-block;
 }
 
-/* Dark bold title */
 .site-title {
-  font-size: 2.8rem;
-  font-weight: 900;   /* darkest bold */
-  margin-bottom: 15px;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.6); /* makes text stand out */
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
 }
 
-/* Navigation */
+/* ===== Navigation ===== */
+nav {
+  margin-top: 1rem;
+}
+
 nav a {
-  color: #f0f0f0;
+  color: #fff;
   text-decoration: none;
   margin: 0 15px;
   font-weight: bold;
   font-size: 1.1rem;
   transition: color 0.3s, border-bottom 0.3s;
+  padding-bottom: 5px;
 }
 
-/* Hover effect */
 nav a:hover {
   color: #ffcc00;
   border-bottom: 2px solid #ffcc00;
-  padding-bottom: 2px;
 }
 
-/* Active tab */
 nav a.active {
   color: #ffcc00;
   border-bottom: 2px solid #ffcc00;
-  padding-bottom: 2px;
 }
 
-/* Main content box */
+/* ===== Main Content ===== */
 main {
-  max-width: 800px;
-  margin: 20px auto;
+  max-width: 1000px;
+  margin: 30px auto;
   padding: 20px;
   background: white;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* Footer */
+h2 {
+  color: #ad1457;
+  margin-top: 0;
+}
+
+/* ===== Destination Grid ===== */
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.destination-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.destination-card h3 {
+  margin: 10px 0;
+  color: #333;
+}
+
+.destination-card p {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.destination-card a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #ad1457;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.destination-card a:hover {
+  color: #ff4081;
+}
+
+.destination-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* ===== Video Styling ===== */
+.video-container {
+  margin-top: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* ===== Footer ===== */
 footer {
   text-align: center;
-  padding: 15px;
-  margin-top: 20px;
+  padding: 20px;
   background: #333;
   color: white;
+  margin-top: 30px;
+  font-size: 0.9rem;
 }
