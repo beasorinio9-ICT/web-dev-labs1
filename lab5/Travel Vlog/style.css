@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background: #f5f5f5;
+  background: hsl(0, 61%, 85%);
   color: #333;
 }
 
