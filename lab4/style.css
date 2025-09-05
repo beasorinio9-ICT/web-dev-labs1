@@ -2,12 +2,23 @@ body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fff0f5; /* soft pink */
+  background-color: #fff0f5; 
   color: #4b2e2e;
 }
 
 header {
-  background-color: #f8c8dc; /* pastel pink */
+      background-image: url('image\ save.jpg'); 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      color: white;
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+
+header {
+  background-color: #f8c8dc; 
   padding: 20px;
   text-align: center;
   font-size: 24px;
@@ -19,7 +30,7 @@ nav ul {
   display: flex;
   justify-content: center;
   list-style: none;
-  background-color: #dda0dd; /* plum */
+  background-color: #dda0dd; 
   margin: 0;
   padding: 10px;
 }
