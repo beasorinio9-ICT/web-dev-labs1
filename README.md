@@ -1,4 +1,4 @@
-🌸 Bean & Bea’s Corner
+🌸 Bea & Bloom Café
 
 📘 Project Description
 Bean & Bea’s Corner is a multi-page website created as part of my ICT coursework. It features a girly aesthetic, interactive navigation, and creative content such as stop-motion animation and curriculum reflections. This project demonstrates my skills in web development, design, and digital storytelling.
