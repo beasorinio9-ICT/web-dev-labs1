@@ -5,10 +5,9 @@ body {
   background: linear-gradient(180deg, #fff0f6, #ffe6f0);
   color: #333;
 }
-
-
-header {
-  background: linear-gradient(135deg, #ff80bf, #ffb6d9);
+  header {
+  background: url("images/my\ bg\ site.jpg") center/cover no-repeat, 
+  linear-gradient(135deg, #ff80bf, #ffb6d9); 
   color: white;
   padding: 25px 15px;
   text-align: center;
