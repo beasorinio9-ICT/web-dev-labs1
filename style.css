@@ -1,18 +1,27 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', Arial, sans-serif;
   margin: 0;
+  background: #fff0f6; /* light pink background */
+  color: #333;
 }
 
 header {
-  background: #3bd1d1;
+  background: linear-gradient(135deg, #ff80bf, #ffb6d9); /* soft pink gradient */
   color: white;
-  padding: 1px;
+  padding: 15px;
   text-align: center;
+  border-bottom: 4px solid #ff66b2; /* darker pink border */
 }
 
-header p{
-  font-size: 0.9em;
-  color: #e0e0e0;  
+header h2 {
+  margin: 5px 0;
+  font-size: 1.8em;
+  letter-spacing: 1px;
+}
+
+header p {
+  font-size: 1em;
+  color: #ffe6f0;  
 }
 
 .container {
@@ -21,16 +30,21 @@ header p{
 }
 
 .sidebar {
-  width: 20%;
-  background: #f4f4f4;
+  width: 22%;
+  background: #ffe6f0; /* light pastel pink */
   padding: 15px;
   box-sizing: border-box;
-  border-right: 1px solid #ddd;
+  border-right: 2px solid #ff99cc;
   overflow-y: auto;
+  border-radius: 0 15px 15px 0;
 }
 
 .sidebar h3 {
   margin-top: 0;
+  color: #cc0066;
+  font-size: 1.3em;
+  border-bottom: 2px solid #ff99cc;
+  padding-bottom: 5px;
 }
 
 .sidebar ul {
@@ -44,42 +58,48 @@ header p{
 
 .sidebar li ul {
   margin-left: 15px;
-  padding-left: 0px;
-  border-left: 2px solid #ddd;
+  padding-left: 10px;
+  border-left: 2px solid #ffb3d9;
 }
 
 .sidebar a {
   text-decoration: none;
-  color: #cc0044;
+  color: #cc0066; /* dark pink */
+  font-weight: bold;
 }
 
 .sidebar a:hover {
+  color: #ff4da6; /* brighter pink */
   text-decoration: underline;
 }
 
 .content {
-  width: 80%;
+  width: 78%;
   padding: 15px;
   box-sizing: border-box;
+  background: #fff5fa;
+  border-radius: 15px;
 }
 
 iframe {
   width: 100%;
   height: 100%;
-  border: none;
+  border: 2px solid #ff99cc;
+  border-radius: 12px;
+  background: white;
 }
 
 .custom-link {
-    text-decoration: none; /* Removes underline */
-    color: #bd1493; /* Set your desired color (e.g., blue) */
+  text-decoration: none;
+  color: #ffe6f0; 
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 12px;
+  background: #cc0066;
+  transition: 0.3s;
 }
 
-.custom-link:visited {
-    color: #ffffff; /* Same color for visited links */
-}
-
-.custom-link:hover,
-.custom-link:active {
-    color: #06559e; /* Same color for hover and active states */
-    text-decoration: none; /* Ensure no underline on hover */
+.custom-link:hover {
+  background: #ff66b2;
+  color: white;
 }
