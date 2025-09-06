@@ -1,16 +1,27 @@
 body {
   font-family: 'Poppins', Arial, sans-serif;
   margin: 0;
-  background: #fff0f6; /* light pink background */
+  background: #fff0f6; 
   color: #333;
 }
 
 header {
-  background: linear-gradient(135deg, #ff80bf, #ffb6d9); /* soft pink gradient */
+      background-image: url('images.png'); 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      color: white;
+      text-align: center;
+      padding: 5rem 2rem;
+      border-bottom: 4px solid #ff66b2; 
+    }
+header {
+  background: linear-gradient(135deg, #ff80bf, #ffb6d9); 
   color: white;
   padding: 15px;
   text-align: center;
-  border-bottom: 4px solid #ff66b2; /* darker pink border */
+  border-bottom: 4px solid #ff66b2; 
 }
 
 header h2 {
@@ -64,12 +75,12 @@ header p {
 
 .sidebar a {
   text-decoration: none;
-  color: #cc0066; /* dark pink */
+  color: #cc0066; 
   font-weight: bold;
 }
 
 .sidebar a:hover {
-  color: #ff4da6; /* brighter pink */
+  color: #ff4da6; 
   text-decoration: underline;
 }
 
