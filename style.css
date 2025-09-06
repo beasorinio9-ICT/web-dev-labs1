@@ -6,17 +6,15 @@ body {
 }
 
 header {
-      background-image: url('images/my\ bg\ site.jpg'); 
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: relative;
-      color: white;
-      text-align: center;
-      padding: 5rem 2rem;
-      border-bottom: 4px solid #ff66b2; 
-    }
-header {
+  background-image: url('images/my\ bg\ site.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: white;
+  text-align: center;
+  padding: 5rem 2rem;
+  border-bottom: 4px solid #ff66b2; 
   background: linear-gradient(135deg, #ff80bf, #ffb6d9); 
   color: white;
   padding: 15px;
