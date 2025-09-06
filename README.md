@@ -1,3 +1,16 @@
+# Web Development Laboratory Manual
+This repository contains all lab activities for the Web Development course. 
+## Folder Structure 
+- lab1- intro- Introduction to Web Development
+- lab2- github- Github Setup and Pages Publishing
+  In this lab, I learned how to:
+  - Set up a gitHub account
+  - Use GitHub Desktop to commit and push code
+  - Publish a website using GiHub Pages
+- lab3- workflow- Version Control and Project Organization
+
+Each folder contains one HTML project. View the live version using GitHub Pages. 
+
 🌸 Bea & Bloom Café
 
 📘 Project Description
@@ -31,9 +44,8 @@ Bean & Bea’s Corner is a multi-page website created as part of my ICT coursewo
 - Embedded stop-motion animation
 - Emphasis on empathy, inclusion, and creativity
 
-👩‍💻 Author
-**Bea A. Sorinio**  
-BSIE-ICT 3A Student  
+> Created by: Bea A. Sorinio
+> Instructor: Michael Serrano
 Passionate about technology, creativity, and inclusive education
 
 📬 Contact
