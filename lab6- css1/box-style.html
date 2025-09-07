@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background & Border Styling Exercise</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff0f5;
+      margin: 20px;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px; /* spacing between boxes */
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      width: 250px;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 15px;
+      color: #333;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .box1 {
+      background-color: #ffe6f0;
+      border: 3px solid #ff66b2;
+    }
+
+    .box2 {
+      background-color: #e6f7ff;
+      border: 3px dashed #3399ff;
+    }
+
+    .box3 {
+      background-color: #e6ffe6;
+      border: 3px dotted #33cc66;
+    }
+
+    h2 {
+      margin-top: 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="text-align:center;">Styled Content Boxes</h1>
+
+  <div class="container">
+    <div class="box box1">
+      <h2>Box 1</h2>
+      <p>This box has a <strong>solid pink border</strong>, a soft pink background, and rounded corners. Padding and margin add spacing inside and outside.</p>
+    </div>
+
+    <div class="box box2">
+      <h2>Box 2</h2>
+      <p>This box uses a <strong>dashed blue border</strong>, a light blue background, and rounded edges. It also has padding inside for spacing.</p>
+    </div>
+
+    <div class="box box3">
+      <h2>Box 3</h2>
+      <p>This box features a <strong>dotted green border</strong>, a mint green background, and rounded corners. Margins keep it spaced apart from others.</p>
+    </div>
+  </div>
+
+</body>
+</html>
