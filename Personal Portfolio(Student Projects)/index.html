@@ -3,187 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio | Home</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* Basic Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: #f4f4f4;
-    }
-
-    header {
-      background-color: #333;
-      color: white;
-      padding: 10px 0;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    /* Navigation Bar Styling */
-    nav ul {
-      list-style: none;
-      text-align: center;
-      padding: 0;
-    }
-
-    nav ul li {
-      display: inline-block;
-      margin: 0 15px;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.1rem;
-      padding: 10px 20px;
-      transition: background-color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      background-color: #555;
-      border-radius: 5px;
-    }
-
-    /* Main Content Styling */
-    .intro {
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    .profile-pic {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      margin-bottom: 20px;
-    }
-
-    .intro h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
-    .intro p {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto 20px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 15px 30px;
-      background-color: #333;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: #555;
-    }
-
-    /* Footer Styling */
-    footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 10px 0;
-    }
-
-    /* Smooth Scroll */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* Responsive Styling */
-    @media screen and (max-width: 768px) {
-      nav ul li {
-        display: block;
-        margin: 10px 0;
-      }
-
-      header h1 {
-        font-size: 2rem;
-      }
-    }
-  </style>
+  <title>Bea Sorinio | Home</title>
+  <meta name="description" content="Welcome to Bea's personal portfolio. Explore my projects, skills, and student journey as a BSIE-ICT learner.">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header>
     <h1>Hi, I'm Bea 👩‍💻</h1>
     <nav>
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="credits.html">Credits</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section id="home" class="intro">
-      <img src="images/profile.jpg" alt="My Photo" class="profile-pic">
+    <section class="intro">
+      <img src="images/profile.jpg" alt="Photo of Bea" class="profile-pic">
       <h2>Welcome to My Portfolio!</h2>
       <p>
-        I am a BSIE-ICT student passionate about technology, creativity, and lifelong learning.  
-        This portfolio highlights my academic journey, skills, and the projects I’ve created as a student.  
-        Explore the different sections to know more about me and my work.
+        Hi! I’m Bea, a BSIE-ICT student with a passion for design, innovation, and technology.  
+        This portfolio is a collection of my academic journey, the skills I’ve built, and the projects I am proud of.  
+        I believe that learning is a continuous process, and every challenge opens a door to creativity and growth.  
+        Here, you’ll find details about my background, personal values, technical skills, and examples of my work.  
+        My goal is to build solutions that make an impact while growing as a professional.  
+        I hope you enjoy exploring my site as much as I enjoyed creating it!  
       </p>
-      <a href="#projects" class="btn">View My Projects</a>
-    </section>
-    
-    <!-- Other Sections (About, Projects, Skills, etc.) -->
-    <section id="about">
-      <h2>About Me</h2>
-      <p>Information about you...</p>
-    </section>
-
-    <section id="projects">
-      <h2>My Projects</h2>
-      <p>Details about your projects...</p>
-    </section>
-
-    <section id="skills">
-      <h2>My Skills</h2>
-      <p>Details about your skills...</p>
-    </section>
-
-    <section id="resume">
-      <h2>Resume</h2>
-      <p>Details about your resume...</p>
-    </section>
-
-    <section id="gallery">
-      <h2>Gallery</h2>
-      <p>Gallery content...</p>
-    </section>
-
-    <section id="blog">
-      <h2>Blog</h2>
-      <p>Blog content...</p>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Contact information...</p>
+      <a href="projects.html" class="btn">View My Projects</a>
     </section>
   </main>
 
