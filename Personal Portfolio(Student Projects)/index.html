@@ -7,7 +7,6 @@
   <meta name="description" content="Welcome to Bea's personal portfolio. Explore my projects, skills, and student journey as a BSIE-ICT learner.">
   <link rel="stylesheet" href="css/styles.css">
   <style>
-    /* Temporary inline CSS for demo, you can move this to styles.css */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -43,30 +42,49 @@
     nav ul li a:hover {
       color: #ffdd57;
     }
+
+    /* --- Hero Section Layout --- */
     .hero {
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      text-align: center;
+      gap: 40px;
       padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
     }
+
     .hero img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
+      width: 280px;
+      height: auto;
       border: 4px solid #6c63ff;
-      margin-bottom: 20px;
+      object-fit: cover;
     }
-    .hero h2 {
-      font-size: 28px;
-      margin-bottom: 10px;
+
+    .hero-text {
+      max-width: 600px;
+    }
+
+    .hero-text h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
       color: #6c63ff;
     }
-    .hero p {
-      max-width: 600px;
-      font-size: 16px;
+
+    .hero-text p {
+      font-size: 17px;
       line-height: 1.6;
+    }
+
+    /* --- Responsive (for mobile) --- */
+    @media screen and (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero img {
+        width: 200px;
+      }
     }
   </style>
 </head>
@@ -91,13 +109,18 @@
 
   <main>
     <section class="hero">
+      <!-- Image on the left -->
       <img src="images/me.jpg" alt="Photo of Bea">
-      <h2>Hello, I’m Bea 👩‍💻</h2>
-      <p>
-        I am a BSIE-ICT student passionate about design, innovation, and technology.  
-        This portfolio is a glimpse of who I am and the journey I’m taking as a learner and creator.  
-        I believe learning never stops, and I aim to build meaningful solutions while growing my skills.  
-      </p>
+
+      <!-- Text on the right -->
+      <div class="hero-text">
+        <h2>Hello, I’m Bea 👩‍💻</h2>
+        <p>
+          I am a BSIE-ICT student passionate about design, innovation, and technology.  
+          This portfolio is a glimpse of who I am and the journey I’m taking as a learner and creator.  
+          I believe learning never stops, and I aim to build meaningful solutions while growing my skills.  
+        </p>
+      </div>
     </section>
   </main>
 
