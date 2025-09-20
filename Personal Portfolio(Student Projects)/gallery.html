@@ -1,34 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bea Sorinio | Gallery</title>
+  <meta name="description" content="Gallery — screenshots and photos of Bea's projects and creative works.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>Gallery & Achievements</h1>
-</header>
-
-<main>
-  <section>
-    <h2>Snapshots of My Work</h2>
-    <div class="gallery">
-      <img src="images/project1.jpg" alt="Space Shooter">
-      <img src="images/project2.jpg" alt="Pharmacy System">
-      <img src="images/profile.jpg" alt="Profile Picture">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><img src="images/logo.png" alt="logo" width="56"><div><h1>Bea Sorinio</h1><div class="tagline">BSIE-ICT • Portfolio</div></div></a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a class="active" href="gallery.html">Gallery</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="hobbies.html">Hobbies</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-    <p>
-      This gallery highlights my academic journey and achievements.  
-      Each project taught me new lessons in design, coding, and perseverance.  
-      From small console applications to larger management systems, I’ve learned that growth comes from practice and curiosity.
-    </p>
-  </section>
-</main>
+  </header>
 
-<footer>
-  <p>© 2025 Bea Sorinio</p>
-</footer>
+  <main class="container">
+    <section class="card">
+      <h2 class="section-title">Photos & Screenshots</h2>
+      <p>This gallery shows project screenshots, UI mockups, and a few personal photos that reflect my creative process. Each image includes descriptive alt text for accessibility. Replace the placeholder images in the /images folder with your own project screenshots and photos. The gallery below is a responsive grid — click an image to view it larger (you can implement a lightbox later if desired).</p>
+      <div class="grid">
+        <figure>
+          <img src="images/gallery1.jpg" alt="Project UI mockup 1" class="project-thumb">
+          <figcaption>UI mockup for a web mini-project</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gallery2.jpg" alt="Project screenshot 2" class="project-thumb">
+          <figcaption>Space Shooter screenshot</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gallery3.jpg" alt="Personal sketch and color palette" class="project-thumb">
+          <figcaption>Color palette study</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container">© 2025 Bea Sorinio</div></footer>
+  <button id="backTop" title="Back to top">↑</button>
+  <script src="scripts.js"></script>
 </body>
 </html>

@@ -1,130 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bea A. Sorinio | Portfolio</title>
-  <meta name="description" content="Welcome to Bea's personal portfolio. Explore my projects, skills, and student journey as a BSIE-ICT learner.">
-  <link rel="stylesheet" href="css/styles.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #ffffff;
-      color: #333;
-    }
-    header {
-      background: #e70c85;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-    }
-    header h1 {
-      color: #fff;
-      font-size: 22px;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      margin: 0;
-      padding: 0;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: #161105;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    nav ul li a:hover {
-      color: #7d2de6;
-    }
-
-    /* Hero Section Layout */
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .hero img {
-      width: 280px;
-      height: auto;
-      object-fit: cover;
-    }
-
-    .hero-text {
-      max-width: 600px;
-    }
-
-    .hero-text h2 {
-      font-size: 32px;
-      margin-bottom: 15px;
-      color: #252527;
-    }
-
-    .hero-text p {
-      font-size: 17px;
-      line-height: 1.6;
-    }
-
-    /* Responsive (for mobile) */
-    @media screen and (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-      .hero img {
-        width: 200px;
-      }
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bea Sorinio | Home</title>
+  <meta name="description" content="Home — Bea Sorinio, BSIE-ICT student portfolio showcasing projects, skills and creative work.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-   
-  <nav>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="credits.html">Credits</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="Bea logo" width="56" style="border-radius:12px;object-fit:cover">
+        <div>
+          <h1>Bea Sorinio</h1>
+          <div class="tagline">BSIE-ICT • Creative portfolio</div>
+        </div>
+      </a>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="hobbies.html">Hobbies</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <!-- Image on the left -->
-      <img src="images/me.jpg" alt="Photo of Bea">
+  <main class="container">
+    <section class="hero card">
+      <img src="images/profile.jpg" alt="Bea smiling at laptop" class="hero-img">
+      <div class="hero-content">
+        <h2>Hi — I'm Bea</h2>
+        <p>I am a BSIE-ICT student at the Technological University of the Philippines — Manila. I combine creativity and technology to build useful, friendly digital projects. This portfolio showcases my coursework, mini-projects, and reflective writing during the semester. I enjoy designing attractive user interfaces and building small desktop apps using C# Windows Forms, as well as front-end web pages in HTML, CSS, and JavaScript. I often document my process and keep commits frequent so instructors can review my progress. Explore this site to see projects like a Space Shooter game, a Flappy Bird clone, and a PharmacyXMLSystem—each project page includes screenshots and setup instructions so they can be run locally in Visual Studio. Outside of code, I like pastel palettes, illustration and journaling which influence the visual style of this portfolio.</p>
+        <p><a class="btn" href="projects.html">See Projects</a></p>
+      </div>
+    </section>
 
-      <!-- Text on the right -->
-      <div class="hero-text">
-        <h2>Hello, I’m Bea 🌸</h2>
-        <p>
-          I am a BSIE-ICT student passionate about design, innovation, and technology.  
-          This portfolio is a glimpse of who I am and the journey I’m taking as a learner and creator.  
-          I believe learning never stops, and I aim to build meaningful solutions while growing my skills.  
-        </p>
+    <section class="card">
+      <h3 class="section-title">Featured Projects</h3>
+      <div class="grid">
+        <article>
+          <img src="images/project-space-shooter.jpg" alt="Space Shooter screenshot" class="project-thumb">
+          <h4>Space Shooter (C#)</h4>
+          <p>Windows Forms game with enemy waves and shooting mechanics. Click Projects to see details.</p>
+        </article>
+        <article>
+          <img src="images/project-flappy.jpg" alt="Flappy Bird clone screenshot" class="project-thumb">
+          <h4>Flappy Bird Clone</h4>
+          <p>Flappy-style Windows Forms game extended with shooting and scoring mechanics.</p>
+        </article>
+        <article>
+          <img src="images/project-pharmacy.jpg" alt="Pharmacy System screenshot" class="project-thumb">
+          <h4>PharmacyXMLSystem</h4>
+          <p>Inventory system with XML storage, CRUD operations and billing features built in C#.</p>
+        </article>
       </div>
     </section>
   </main>
 
-  <footer>
-   <center><p>© 2025 Bea A. Sorinio | Student Portfolio</p></center> 
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Bea Sorinio • Student Portfolio • Made with 💖</p>
+    </div>
   </footer>
+
+  <button id="backTop" title="Back to top">↑</button>
+  <script src="scripts.js"></script>
 </body>
 </html>

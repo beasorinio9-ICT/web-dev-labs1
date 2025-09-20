@@ -1,55 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bea Sorinio | About Me</title>
-  <meta name="description" content="Learn more about Bea Sorinio, a BSIE-ICT student passionate about creativity, technology, and lifelong learning.">
-  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bea Sorinio | About</title>
+  <meta name="description" content="About Bea — background, studies, interests and long-term goals as a BSIE-ICT student.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header + Navigation -->
-  <header>
-    <h1>Bea A. Sorinio</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="credits.html">Credits</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="Bea logo" width="56">
+        <div><h1>Bea Sorinio</h1><div class="tagline">BSIE-ICT • Creative portfolio</div></div>
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="hobbies.html">Hobbies</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- Main Content -->
-  <main>
-    <section class="hero">
-      <!-- About Page Image -->
-      <img src="images/about.jpg" alt="Bea working on her laptop">
-
-      <!-- About Page Text -->
-      <div class="hero-text">
+  <main class="container">
+    <section class="hero card">
+      <img src="images/about.jpg" alt="Bea working on her laptop" class="hero-img">
+      <div class="hero-content">
         <h2>Who I Am</h2>
-        <p>
-          Hello! My name is Bea Sorinio, a BSIE-ICT student at the Technological University of the Philippines – Manila.  
-          I’ve always been drawn to the intersection of creativity and technology, which inspired me to pursue my current academic path.  
-          Beyond coding and system development, I enjoy design, research, and learning how digital solutions can positively impact people’s lives.  
-          I believe education is a journey of growth, and I’m motivated to continuously improve my knowledge, skills, and experiences.  
-          When I’m not working on projects, you’ll often find me reading, journaling, or exploring creative hobbies.  
-          My ultimate goal is to become an innovative professional who builds meaningful systems while inspiring others to believe in the power of technology.
-        </p>
+        <p>Hello! I’m <strong>Bea Sorinio</strong>, a BSIE-ICT student at the Technological University of the Philippines — Manila. My interest in combining creative design and software development began when I first experimented with simple web pages and desktop apps. I enjoy designing clean user interfaces with gentle color palettes and building small projects that solve simple problems. My coursework has included Windows Forms projects, where I created games and small management systems; I also work on web mini-projects and write reflective notes on my learning process. I value disciplined practice, frequent commits, and documenting steps so others (like instructors) can follow my progress during live checkpoints. Outside of school I like drawing, journaling, and picking pastel color combinations for UI mockups. My goal is to be a professional who builds delightful, accessible systems and mentors other students in tech.</p>
       </div>
     </section>
+
+    <section class="card">
+      <h3 class="section-title">Experience & Approach</h3>
+      <p>I approach projects by sketching a simple UI, listing required features, then building incrementally. I prefer readable code, clear variable names, and adding comments so instructors and teammates can follow along. When I learn new technologies, I apply them in small practice projects and keep a short write-up in my blog page so I can remember the steps and show growth over time.</p>
+    </section>
   </main>
-  
-  <footer>
-    <p>© 2025 Bea Sorinio | Student Portfolio</p>
-  </footer>
+
+  <footer class="site-footer"><div class="container">© 2025 Bea Sorinio • Student Portfolio</div></footer>
+  <button id="backTop" title="Back to top">↑</button>
+  <script src="scripts.js"></script>
 </body>
 </html>

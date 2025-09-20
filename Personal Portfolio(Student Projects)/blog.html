@@ -1,56 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog | Bea A. Sorinio</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bea Sorinio | Blog</title>
+  <meta name="description" content="Blog — reflections, how-to notes, and progress updates by Bea Sorinio.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Bea A. Sorinio</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="blog.html" class="active">Blog</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="credits.html">Credits</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><img src="images/logo.png" alt="logo" width="56"><div><h1>Bea Sorinio</h1><div class="tagline">BSIE-ICT • Reflections</div></div></a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a class="active" href="blog.html">Blog</a></li>
+          <li><a href="hobbies.html">Hobbies</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <article>
-        <h2>Learning Programming as a Student</h2>
-        <p>
-          Learning programming has been a rewarding and challenging experience.  
-          I started with basic concepts in C# and slowly moved to building real projects.  
-          The process of debugging, solving problems, and seeing my code work has given me confidence.  
-          This journey also taught me the importance of patience and persistence.
-        </p>
-      </article>
+  <main class="container">
+    <section class="card">
+      <h2 class="section-title">How I Plan Projects</h2>
+      <p>Every project begins with a simple plan: sketch the interface, list required features, and break tasks into small commits. For class mini-projects, I create a short README so instructors can run the project locally and review changes on GitHub. I keep notes on what went well and what I learned. This blog page contains quick posts about debugging tips, design decisions, and commands I used in Git. These short reflections help me prepare for live grading sessions and show continuous progress. I often include screenshots and code snippets when relevant so peers and instructors can follow my work more easily.</p>
 
-      <article>
-        <h2>Balancing Studies and Creativity</h2>
-        <p>
-          As a student, it can be overwhelming to manage deadlines and projects.  
-          I balance my academic responsibilities with creative hobbies like design and writing.  
-          These activities not only relax me but also improve my ability to think outside the box.  
-          I believe that creativity and technology complement each other in powerful ways.
-        </p>
+      <article style="margin-top:12px">
+        <h3>Post: Adding a Contact Form (frontend only)</h3>
+        <p>I added a simple contact form to my portfolio. Since there's no backend for this class activity, the form shows a friendly confirmation message after submission. This satisfies the interactivity requirement and demonstrates basic form handling with JavaScript. For future improvements, I plan to learn how to connect a lightweight backend or use email services if allowed.</p>
       </article>
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 Bea A. Sorinio | Student Portfolio</p>
-  </footer>
+  <footer class="site-footer"><div class="container">© 2025 Bea Sorinio</div></footer>
+  <button id="backTop" title="Back to top">↑</button>
+  <script src="scripts.js"></script>
 </body>
 </html>

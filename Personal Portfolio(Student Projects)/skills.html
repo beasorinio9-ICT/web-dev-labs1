@@ -1,49 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Bea Sorinio | Skills</title>
-  <meta name="description" content="Discover Bea's technical and soft skills, from programming and design to collaboration and leadership.">
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="description" content="Skills — programming languages, tools, and soft skills used by Bea Sorinio.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>My Skills</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="credits.html">Credits</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><img src="images/logo.png" alt="logo" width="56"><div><h1>Bea Sorinio</h1><div class="tagline">BSIE-ICT • Creative portfolio</div></div></a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a class="active" href="skills.html">Skills</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="hobbies.html">Hobbies</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <img src="images/skills.jpg" alt="Skills illustration" style="max-width:350px; border-radius:10px;">
-      <h2>What I Can Do</h2>
-      <p>
-        My journey in ICT has equipped me with a blend of technical and interpersonal skills.  
-        On the technical side, I am proficient in programming languages such as **C#, Java, and HTML/CSS**.  
-        I also have experience in **Windows Forms, database design (XML, SQL), and website development**.  
-        I enjoy creating **clean, user-friendly interfaces** and applying problem-solving techniques to bring ideas to life.  
-        Beyond coding, I value **soft skills** like communication, adaptability, teamwork, and leadership.  
-        These help me collaborate effectively with classmates and confidently present my work.  
-        I believe that skills are constantly evolving, and I strive to keep learning, practicing, and challenging myself with new technologies and opportunities.
-      </p>
+  <main class="container">
+    <section class="card">
+      <h2 class="section-title">Technical & Soft Skills</h2>
+      <p>I have a foundation in <strong>HTML, CSS, and JavaScript</strong> for front-end pages, and I build desktop apps using <strong>C# and Windows Forms</strong> for school projects. I have created games (Space Shooter, Flappy clone), a Pharmacy management system using XML storage, and smaller utilities. Besides technical skills, I emphasize <em>clean design, usability, and accessibility</em>. I practice semantic HTML structure with proper headings and alt text for images. I use Git and GitHub for version control—making frequent, small commits to show progress during live class checkpoints. My soft skills include patience, attention to detail, willingness to ask questions, and the ability to explain my approach in simple steps during demos.</p>
+
+      <h3 style="margin-top:12px">Skill List</h3>
+      <ul>
+        <li>HTML & CSS — semantic markup, responsive design</li>
+        <li>JavaScript — DOM, small interactivity</li>
+        <li>C# — Windows Forms projects (games, CRUD apps)</li>
+        <li>Git / GitHub — repo management and GitHub Pages</li>
+        <li>Design — color, typography, spacing, accessibility</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h3 class="section-title">Learning Goals</h3>
+      <p>Short-term: deepen JavaScript skills and learn modern front-end frameworks. Long-term: build robust, accessible apps and participate in collaborative projects. I document each learning milestone in my blog so instructors can track progress and I can reflect on improvements.</p>
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 Bea Sorinio | Student Portfolio</p>
-  </footer>
+  <footer class="site-footer"><div class="container">© 2025 Bea Sorinio</div></footer>
+  <button id="backTop" title="Back to top">↑</button>
+  <script src="scripts.js"></script>
 </body>
 </html>

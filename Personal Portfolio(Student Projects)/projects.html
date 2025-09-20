@@ -1,48 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Bea Sorinio | Projects</title>
-  <meta name="description" content="Explore Bea's projects including academic work, personal experiments, and creative portfolio highlights.">
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="description" content="Projects by Bea — games, desktop apps, and web mini-projects with descriptions and screenshots.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>My Projects</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="credits.html">Credits</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><img src="images/logo.png" alt="logo" width="56"><div><h1>Bea Sorinio</h1><div class="tagline">BSIE-ICT • Creative portfolio</div></div></a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a class="active" href="projects.html">Projects</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="hobbies.html">Hobbies</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <img src="images/project1.jpg" alt="Screenshot of a student project" style="max-width:400px; border-radius:10px;">
-      <h2>Featured Projects</h2>
-      <p>
-        Over the course of my studies, I’ve completed various projects that demonstrate my growing skills in ICT.  
-        One of my favorite projects is a **Space Shooter Game**, built in C# with Windows Forms. It helped me apply object-oriented programming concepts, inheritance, and GUI design.  
-        I also worked on a **Pharmacy Management System** using XML for data storage, which deepened my understanding of databases and user interaction.  
-        Beyond coding, I enjoy designing **personal websites**, experimenting with layouts, colors, and user-friendly navigation.  
-        Each project has taught me valuable lessons about problem-solving, teamwork, and persistence.  
-        I look forward to taking on bigger challenges that combine my technical knowledge with creative thinking, with the goal of creating impactful solutions.
-      </p>
+  <main class="container">
+    <section class="card">
+      <h2 class="section-title">Featured Projects & Details</h2>
+      <article>
+        <h3>Space Shooter (Windows Forms)</h3>
+        <img src="images/project-space-shooter.jpg" alt="Space Shooter screenshot" class="project-thumb">
+        <p>This is a class project demonstrating inheritance, timers, collision detection, and image resource usage. Player shoots enemies while surviving waves. The project includes player health, enemy bullets, and scoring. The codebase has clear comments and resource images named consistently so Visual Studio can import them into Resources. For instructors: open the solution, ensure image resources are added, and run in Debug to test gameplay. The page above contains a short README summary and the GitHub repo link (add your repo link here once uploaded).</p>
+      </article>
+
+      <article style="margin-top:12px">
+        <h3>Flappy Bird Clone (Windows Forms)</h3>
+        <img src="images/project-flappy.jpg" alt="Flappy Bird screenshot" class="project-thumb">
+        <p>This project replicates Flappy Bird mechanics and adds shooting mechanics and scoring. Includes Start button and round-based scoring. I implemented collision detection between bullets and enemies, a restart flow, and visual assets stored in the project's resources. The project is documented so the instructor can run it locally and verify functionality during live grading.</p>
+      </article>
+
+      <article style="margin-top:12px">
+        <h3>PharmacyXMLSystem</h3>
+        <img src="images/project-pharmacy.jpg" alt="Pharmacy system screenshot" class="project-thumb">
+        <p>Inventory and billing app using XML for persistent storage. Features add/update/delete/search, low stock alerts, and billing with a DataGridView interface. The XML helper class manages storage and retrieval, making the app portable and easy to inspect. The project is ideal for demonstrating practical CRUD and file handling in C#.</p>
+      </article>
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 Bea Sorinio | Student Portfolio</p>
-  </footer>
+  <footer class="site-footer"><div class="container">© 2025 Bea Sorinio</div></footer>
+  <button id="backTop" title="Back to top">↑</button>
+  <script src="scripts.js"></script>
 </body>
 </html>
