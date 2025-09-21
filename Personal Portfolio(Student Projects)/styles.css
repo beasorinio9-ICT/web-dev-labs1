@@ -1,176 +1,208 @@
-/* style.css - Girly pastel theme for Bea Sorinio */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap');
+/* --------------------
+   Bea Sorinio Portfolio Style
+   Inspired by Bea & Bloom Café pastel vibe 🌸
+--------------------- */
 
-:root{
-  --bg: #fff4fb;
-  --card: #ffffff;
-  --accent1: #ffd7ea; /* soft pink */
-  --accent2: #efe8ff; /* lavender */
-  --peach: #ffe6d5;
-  --hot: #d8559b;
-  --muted: #6b6b6b;
-  --radius: 14px;
-}
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Quicksand:wght@400;600&display=swap');
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family: 'Poppins', Arial, sans-serif;
-  background: linear-gradient(180deg,var(--bg), #fffaf6);
-  color:#242424;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.6;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* container */
-.container{
-  max-width:1000px;
-  margin:24px auto;
-  padding:0 18px;
+/* Body */
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: #fffafc;
+  color: #333;
+  line-height: 1.6;
 }
 
-/* header / nav */
-.site-header{
-  background: linear-gradient(90deg,var(--accent1),var(--accent2));
-  padding:18px 0;
-  border-radius:0 0 24px 24px;
-  box-shadow: 0 6px 22px rgba(216,85,155,0.08);
-}
-.header-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-}
-.brand{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  text-decoration:none;
-  color:var(--hot);
-}
-.brand h1{
-  margin:0;
-  font-family:'Playfair Display', serif;
-  font-size:24px;
-  color:#5b1f47;
-}
-.tagline{color:var(--muted); font-size:14px}
-
-/* nav */
-.main-nav ul{
-  list-style:none;
-  display:flex;
-  gap:10px;
-  padding:0;
-  margin:0;
-  flex-wrap:wrap;
-}
-.main-nav a{
-  text-decoration:none;
-  color:#5b1f47;
-  background:rgba(255,255,255,0.75);
-  padding:8px 12px;
-  border-radius:999px;
-  font-weight:600;
-  transition:transform .15s ease, box-shadow .15s ease;
-  box-shadow:0 2px 8px rgba(0,0,0,0.04);
-}
-.main-nav a:hover{transform:translateY(-3px); box-shadow:0 8px 30px rgba(0,0,0,0.06)}
-.main-nav a.active{background:var(--peach); color:#5b1f47}
-
-/* hero / content */
-.hero{
-  display:flex;
-  gap:24px;
-  align-items:center;
-  margin-top:22px;
-  background:var(--card);
-  padding:22px;
-  border-radius:18px;
-  box-shadow:0 8px 30px rgba(0,0,0,0.04);
-}
-.hero-img{
-  width:220px;
-  height:220px;
-  object-fit:cover;
-  border-radius:16px;
-  box-shadow:0 8px 24px rgba(216,85,155,0.07);
-}
-.hero-content h2{font-family:'Playfair Display', serif; margin:0 0 8px 0; color:#6a1b47}
-.hero-content p{margin:0 0 8px 0; color:var(--muted)}
-
-/* card / sections */
-.card{
-  background:var(--card);
-  border-radius:14px;
-  padding:16px;
-  margin-top:18px;
-  box-shadow:0 6px 20px rgba(0,0,0,0.03);
-}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:14px;
-  margin-top:12px;
-}
-.project-thumb{width:100%; height:160px; object-fit:cover; border-radius:12px}
-.section-title{font-family:'Playfair Display', serif; color:#6a1b47; margin:0 0 10px 0; font-size:20px}
-
-/* footer */
-.site-footer{
-  margin-top:28px;
-  padding:20px 0;
-  text-align:center;
-  color:var(--muted);
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-/* FAQ */
-.faq-question{display:block;width:100%;text-align:left;padding:12px;border-radius:10px;border:1px solid #fde6f1;background:linear-gradient(180deg,#fff,#fff4fb);cursor:pointer}
-.faq-answer{display:none;padding:12px;margin-top:6px;border-radius:10px;background:#fff}
-
-/* contact form */
-input[type="text"], input[type="email"], textarea{
-  width:100%;
-  padding:10px;
-  border-radius:10px;
-  border:1px solid #f1d7e2;
-  margin-top:8px;
-  font-size:14px;
-}
-.btn{
-  display:inline-block;
-  background:linear-gradient(90deg,var(--hot),#ff6ea3);
-  color:#fff;
-  border:none;
-  padding:10px 16px;
-  border-radius:999px;
-  cursor:pointer;
-  font-weight:600;
-  margin-top:12px;
-}
-.btn:active{transform:translateY(1px)}
-
-/* back to top */
-#backTop{
-  position:fixed;
-  right:18px;
-  bottom:18px;
-  background:var(--hot);
-  color:#fff;
-  border:none;
-  padding:12px;
-  border-radius:999px;
-  box-shadow:0 6px 18px rgba(0,0,0,0.12);
-  cursor:pointer;
-  display:none;
+/* Header */
+.site-header {
+  background: linear-gradient(90deg, #ffb6c1, #ffd1dc);
+  padding: 1rem 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* responsive */
-@media (max-width:880px){
-  .hero{flex-direction:column}
-  .header-inner{flex-direction:column; align-items:flex-start; gap:10px}
-  .main-nav ul{justify-content:flex-start}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.brand img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.brand-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.tagline {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* Navigation */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  background: #ffe4ec;
+  color: #c2185b;
+}
+
+/* Hero / Card */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.hero-img {
+  width: 250px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.hero-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #c2185b;
+}
+
+.highlight {
+  background: #ffe4ec;
+  padding: 0 6px;
+  border-radius: 6px;
+}
+
+.card {
+  background: #fff;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #c2185b;
+  margin-bottom: 1rem;
+}
+
+/* Grid for projects */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: #fffafc;
+  border: 2px solid #ffe4ec;
+  border-radius: 16px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.project-thumb {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 0.8rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: #ffb6c1;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #c2185b;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  background: #ffd1dc;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #333;
+  border-top: 3px solid #ffb6c1;
+  margin-top: 2rem;
+}
+
+/* Back to Top */
+#backTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #c2185b;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+#backTop:hover {
+  background: #ff80ab;
 }

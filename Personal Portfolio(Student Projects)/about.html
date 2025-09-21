@@ -6,13 +6,215 @@
   <title>Bea Sorinio | About</title>
   <meta name="description" content="About Bea — background, studies, interests and long-term goals as a BSIE-ICT student.">
   <link rel="stylesheet" href="style.css">
+
+  <!-- Fonts para consistent sa café theme -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #fffafc;
+      color: #444;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      background: linear-gradient(90deg, #f8d9e0, #fde2e4);
+      padding: 1rem 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      color: #5a3d3d;
+    }
+
+    .brand .logo {
+      width: 60px;
+      margin-right: 10px;
+    }
+
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin: 0;
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+      color: #9c6b6b;
+    }
+
+    /* ===== NAV ===== */
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #5a3d3d;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      transition: 0.3s ease;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+      background: #fbb1bd;
+      color: white;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: #fff0f5;
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 2rem 0;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .hero-img {
+      width: 220px;
+      border-radius: 50%;
+      border: 5px solid #fde2e4;
+    }
+
+    .hero-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #5a3d3d;
+    }
+
+    .highlight {
+      color: #e75480;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 25px;
+      background: #fbb1bd;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #e75480;
+    }
+
+    /* ===== SECTIONS ===== */
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #5a3d3d;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 15px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card img {
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .project-card h4 {
+      font-family: 'Playfair Display', serif;
+      color: #5a3d3d;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background: #fde2e4;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      border-top: 2px solid #fbb1bd;
+    }
+
+    .site-footer p {
+      font-size: 0.9rem;
+      color: #5a3d3d;
+    }
+
+    /* ===== BACK TO TOP ===== */
+    #backTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #fbb1bd;
+      color: white;
+      border: none;
+      padding: 0.6rem 0.8rem;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      transition: 0.3s ease;
+    }
+
+    #backTop:hover {
+      background: #e75480;
+    }
+  </style>
 </head>
 <body>
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html">
-        <img src="images/logo.png" alt="Bea logo" width="56">
-        <div><h1>Bea Sorinio</h1><div class="tagline">BSIE-ICT • Creative portfolio</div></div>
+        <img src="images/logo.png" alt="Bea logo" class="logo">
+        <div>
+          <h1 class="brand-name">Bea Sorinio</h1>
+          <div class="tagline">✨ BSIE-ICT • Creative Portfolio ✨</div>
+        </div>
       </a>
       <nav class="main-nav">
         <ul>
@@ -31,22 +233,49 @@
     </div>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main class="container">
+    <!-- HERO ABOUT -->
     <section class="hero card">
       <img src="images/about.jpg" alt="Bea working on her laptop" class="hero-img">
       <div class="hero-content">
-        <h2>Who I Am</h2>
-        <p>Hello! I’m <strong>Bea Sorinio</strong>, a BSIE-ICT student at the Technological University of the Philippines — Manila. My interest in combining creative design and software development began when I first experimented with simple web pages and desktop apps. I enjoy designing clean user interfaces with gentle color palettes and building small projects that solve simple problems. My coursework has included Windows Forms projects, where I created games and small management systems; I also work on web mini-projects and write reflective notes on my learning process. I value disciplined practice, frequent commits, and documenting steps so others (like instructors) can follow my progress during live checkpoints. Outside of school I like drawing, journaling, and picking pastel color combinations for UI mockups. My goal is to be a professional who builds delightful, accessible systems and mentors other students in tech.</p>
+        <h2>🌸 Who I Am 🌸</h2>
+        <p>
+          Hello! I’m <strong>Bea Sorinio</strong>, a BSIE-ICT student at the <em>Technological University of the Philippines — Manila</em>.  
+          My interest in combining creative design and software development began when I first experimented with simple web pages and desktop apps.  
+        </p>
+        <p>
+          I enjoy designing clean user interfaces with gentle color palettes and building small projects that solve simple problems.  
+          My coursework has included Windows Forms projects (like games and small management systems).  
+        </p>
+        <p>
+          Outside of school I love drawing, journaling, and picking pastel color combos for UI mockups.  
+          My goal is to be a professional who builds delightful, accessible systems and mentors other students in tech. 💻💖
+        </p>
       </div>
     </section>
 
+    <!-- EXPERIENCE & APPROACH -->
     <section class="card">
-      <h3 class="section-title">Experience & Approach</h3>
-      <p>I approach projects by sketching a simple UI, listing required features, then building incrementally. I prefer readable code, clear variable names, and adding comments so instructors and teammates can follow along. When I learn new technologies, I apply them in small practice projects and keep a short write-up in my blog page so I can remember the steps and show growth over time.</p>
+      <h3 class="section-title">✨ Experience & Approach ✨</h3>
+      <p>
+        I approach projects by sketching a simple UI, listing required features, then building incrementally.  
+        I prefer readable code, clear variable names, and adding comments so instructors and teammates can follow along.  
+      </p>
+      <p>
+        When I learn new technologies, I apply them in small practice projects and keep a short write-up in my blog page  
+        so I can remember the steps and show growth over time.
+      </p>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container">© 2025 Bea Sorinio • Student Portfolio</div></footer>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Bea Sorinio • Student Portfolio • Made with 💕 pastel vibes</p>
+    </div>
+  </footer>
+
   <button id="backTop" title="Back to top">↑</button>
   <script src="scripts.js"></script>
 </body>

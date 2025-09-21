@@ -5,19 +5,217 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Bea Sorinio | Home</title>
   <meta name="description" content="Home — Bea Sorinio, BSIE-ICT student portfolio showcasing projects, skills and creative work.">
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Quicksand&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #fffafc;
+      color: #444;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      background: linear-gradient(90deg, #f8d9e0, #fde2e4);
+      padding: 1rem 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      color: #5a3d3d;
+    }
+
+    .brand .logo {
+      width: 60px;
+      margin-right: 10px;
+    }
+
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin: 0;
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+      color: #9c6b6b;
+    }
+
+    /* ===== NAV ===== */
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #5a3d3d;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      transition: 0.3s ease;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+      background: #fbb1bd;
+      color: white;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: #fff0f5;
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 2rem 0;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .hero-img {
+      width: 220px;
+      border-radius: 50%;
+      border: 5px solid #fde2e4;
+    }
+
+    .hero-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #5a3d3d;
+    }
+
+    .highlight {
+      color: #e75480;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 25px;
+      background: #fbb1bd;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #e75480;
+    }
+
+    /* ===== SECTIONS ===== */
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #5a3d3d;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 15px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card img {
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .project-card h4 {
+      font-family: 'Playfair Display', serif;
+      color: #5a3d3d;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background: #fde2e4;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      border-top: 2px solid #fbb1bd;
+    }
+
+    .site-footer p {
+      font-size: 0.9rem;
+      color: #5a3d3d;
+    }
+
+    /* ===== BACK TO TOP ===== */
+    #backTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #fbb1bd;
+      color: white;
+      border: none;
+      padding: 0.6rem 0.8rem;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      transition: 0.3s ease;
+    }
+
+    #backTop:hover {
+      background: #e75480;
+    }
+  </style>
 </head>
 <body>
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html">
-        <img src="images/logo.png" alt="Bea logo" width="56" style="border-radius:12px;object-fit:cover">
+        <img src="images/log" alt="Bea logo" class="logo">
         <div>
-          <h1>Bea Sorinio</h1>
-          <div class="tagline">BSIE-ICT • Creative portfolio</div>
+          <h1 class="brand-name">Bea Sorinio</h1>
+          <div class="tagline">✨ BSIE-ICT • Creative Portfolio ✨</div>
         </div>
       </a>
 
+      <!-- NAVIGATION -->
       <nav class="main-nav">
         <ul>
           <li><a class="active" href="index.html">Home</a></li>
@@ -35,41 +233,49 @@
     </div>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main class="container">
-    <section class="hero card">
+    <!-- HERO -->
+    <section class="hero">
       <img src="images/profile.jpg" alt="Bea smiling at laptop" class="hero-img">
       <div class="hero-content">
-        <h2>Hi — I'm Bea</h2>
-        <p>I am a BSIE-ICT student at the Technological University of the Philippines — Manila. I combine creativity and technology to build useful, friendly digital projects. This portfolio showcases my coursework, mini-projects, and reflective writing during the semester. I enjoy designing attractive user interfaces and building small desktop apps using C# Windows Forms, as well as front-end web pages in HTML, CSS, and JavaScript. I often document my process and keep commits frequent so instructors can review my progress. Explore this site to see projects like a Space Shooter game, a Flappy Bird clone, and a PharmacyXMLSystem—each project page includes screenshots and setup instructions so they can be run locally in Visual Studio. Outside of code, I like pastel palettes, illustration and journaling which influence the visual style of this portfolio.</p>
-        <p><a class="btn" href="projects.html">See Projects</a></p>
+        <h2>Hello, I’m <span class="highlight">Bea 🌸</span></h2>
+        <p>
+          I am a BSIE-ICT student at the Technological University of the Philippines — Manila.  
+          I combine creativity and technology to build useful, friendly digital projects.  
+          Explore this portfolio to see my coursework, mini-projects, and reflective writing.  
+        </p>
+        <p><a class="btn" href="projects.html">✨ See Projects ✨</a></p>
       </div>
     </section>
 
+    <!-- FEATURED PROJECTS -->
     <section class="card">
-      <h3 class="section-title">Featured Projects</h3>
+      <h3 class="section-title">💖 Featured Projects 💖</h3>
       <div class="grid">
-        <article>
+        <article class="project-card">
           <img src="images/project-space-shooter.jpg" alt="Space Shooter screenshot" class="project-thumb">
-          <h4>Space Shooter (C#)</h4>
-          <p>Windows Forms game with enemy waves and shooting mechanics. Click Projects to see details.</p>
+          <h4>🚀 Space Shooter (C#)</h4>
+          <p>Windows Forms game with enemy waves and shooting mechanics.</p>
         </article>
-        <article>
+        <article class="project-card">
           <img src="images/project-flappy.jpg" alt="Flappy Bird clone screenshot" class="project-thumb">
-          <h4>Flappy Bird Clone</h4>
-          <p>Flappy-style Windows Forms game extended with shooting and scoring mechanics.</p>
+          <h4>🐦 Flappy Bird Clone</h4>
+          <p>Flappy-style game extended with shooting and scoring mechanics.</p>
         </article>
-        <article>
+        <article class="project-card">
           <img src="images/project-pharmacy.jpg" alt="Pharmacy System screenshot" class="project-thumb">
-          <h4>PharmacyXMLSystem</h4>
-          <p>Inventory system with XML storage, CRUD operations and billing features built in C#.</p>
+          <h4>💊 PharmacyXMLSystem</h4>
+          <p>Inventory system with XML storage, CRUD operations and billing features.</p>
         </article>
       </div>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
-      <p>© 2025 Bea Sorinio • Student Portfolio • Made with 💖</p>
+      <p>© 2025 Bea Sorinio • Student Portfolio • Made with 💕 pastel vibes</p>
     </div>
   </footer>
 
