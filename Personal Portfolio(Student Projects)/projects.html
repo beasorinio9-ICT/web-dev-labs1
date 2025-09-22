@@ -81,52 +81,11 @@
       color: white;
     }
 
-    /* ===== HERO ===== */
-    .hero {
-      background: #fff0f5;
-      border-radius: 20px;
-      padding: 2rem;
-      margin: 2rem 0;
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    .hero-img {
-      width: 220px;
-      border-radius: 50%;
-      border: 5px solid #fde2e4;
-    }
-
-    .hero-content h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #5a3d3d;
-    }
-
-    .highlight {
-      color: #e75480;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      border-radius: 25px;
-      background: #fbb1bd;
-      color: white;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #e75480;
-    }
-
     /* ===== SECTIONS ===== */
+    main.container {
+      margin-top: 2rem; /* spacing para di dikit sa header */
+    }
+
     .section-title {
       font-family: 'Playfair Display', serif;
       font-size: 1.6rem;
@@ -135,18 +94,11 @@
       color: #5a3d3d;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
     .card {
       background: rgb(248, 207, 231);
-      padding: 1rem;
+      padding: 2rem;
       border-radius: 15px;
       box-shadow: 0 3px 10px rgba(224, 199, 199, 0.438);
-      text-align: center;
       transition: transform 0.2s ease;
     }
 
@@ -154,15 +106,21 @@
       transform: translateY(-5px);
     }
 
-    .project-card img {
+    .project-thumb {
+      width: 100%;
+      max-width: 450px;
+      height: auto;
+      display: block;
+      margin: 1rem auto;
+      border: 4px solid #fde2e4; /* border color */
       border-radius: 12px;
-      margin-bottom: 1rem;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
     }
 
-    .project-card h4 {
+    .card h3 {
       font-family: 'Playfair Display', serif;
       color: #5a3d3d;
-      margin-bottom: 0.5rem;
+      margin-top: 1rem;
     }
 
     /* ===== FOOTER ===== */
@@ -199,18 +157,16 @@
       background: #e75480;
     }
   </style>
-
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-
       <nav class="main-nav">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="skills.html">Skills</a></li>
-          <li><a href="projects.html">Projects</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
           <li><a href="experience.html">Experience</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="resume.html">Resume</a></li>
@@ -225,6 +181,7 @@
   <main class="container">
     <section class="card">
       <h2 class="section-title">Featured Projects & Details</h2>
+      
       <article>
         <h3>Space Shooter (Windows Forms)</h3>
         <img src="images/project1.jpg" alt="Space Shooter screenshot" class="project-thumb">

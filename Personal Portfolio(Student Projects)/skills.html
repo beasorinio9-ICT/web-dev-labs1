@@ -13,6 +13,7 @@
       color: #444;
       margin: 0;
       padding: 0;
+      line-height: 1.6;
     }
 
     .container {
@@ -21,7 +22,7 @@
       margin: auto;
     }
 
-    /*  HEADER  */
+    /* ===== HEADER ===== */
     .site-header {
       background: linear-gradient(90deg, #eb5a7c, #686af1);
       padding: 1rem 0;
@@ -30,37 +31,14 @@
 
     .header-inner {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
     }
 
-    .brand {
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      color: #d8e243;
-    }
-
-    .brand .logo {
-      width: 60px;
-      margin-right: 10px;
-    }
-
-    .brand-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      margin: 0;
-    }
-
-    .tagline {
-      font-size: 0.9rem;
-      color: #1d0e0e;
-    }
-
-    /* ===== NAV ===== */
     .main-nav ul {
       list-style: none;
       display: flex;
+      flex-wrap: wrap;
       gap: 1rem;
       margin: 0;
       padding: 0;
@@ -81,52 +59,11 @@
       color: white;
     }
 
-    /* ===== HERO ===== */
-    .hero {
-      background: #fff0f5;
-      border-radius: 20px;
-      padding: 2rem;
-      margin: 2rem 0;
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    /* ===== MAIN CONTENT ===== */
+    main {
+      margin: 3rem auto;
     }
 
-    .hero-img {
-      width: 220px;
-      border-radius: 50%;
-      border: 5px solid #fde2e4;
-    }
-
-    .hero-content h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #5a3d3d;
-    }
-
-    .highlight {
-      color: #e75480;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      border-radius: 25px;
-      background: #fbb1bd;
-      color: white;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #e75480;
-    }
-
-    /* ===== SECTIONS ===== */
     .section-title {
       font-family: 'Playfair Display', serif;
       font-size: 1.6rem;
@@ -135,46 +72,44 @@
       color: #5a3d3d;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
     .card {
       background: rgb(248, 207, 231);
-      padding: 1rem;
+      padding: 2rem;
+      margin-bottom: 2.5rem;
       border-radius: 15px;
       box-shadow: 0 3px 10px rgba(224, 199, 199, 0.438);
-      text-align: center;
+      text-align: left;
       transition: transform 0.2s ease;
+    }
+
+    /* 🔥 FIX: dagdag top margin sa unang card */
+    .card:first-child {
+      margin-top: 2rem;
     }
 
     .card:hover {
       transform: translateY(-5px);
     }
 
-    .project-card img {
-      border-radius: 12px;
-      margin-bottom: 1rem;
+    .card:last-child {
+      margin-bottom: 0;
     }
 
-    .project-card h4 {
-      font-family: 'Playfair Display', serif;
-      color: #5a3d3d;
-      margin-bottom: 0.5rem;
+    ul {
+      padding-left: 1.2rem;
     }
 
     /* ===== FOOTER ===== */
     .site-footer {
       background: #a486f7;
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+      padding: 1.5rem;
+      margin-top: 3rem;
       border-top: 2px solid #fbb1bd;
     }
 
-    .site-footer p {
+    .site-footer p,
+    .site-footer div {
       font-size: 0.9rem;
       color: #5a3d3d;
     }
@@ -199,12 +134,11 @@
       background: #e75480;
     }
   </style>
-
 </head>
 <body>
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-
       <nav class="main-nav">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -222,10 +156,18 @@
     </div>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main class="container">
     <section class="card">
       <h2 class="section-title">Technical & Soft Skills</h2>
-      <p>I have a foundation in <strong>HTML, CSS, and JavaScript</strong> for front-end pages, and I build desktop apps using <strong>C# and Windows Forms</strong> for school projects. I have created games (Space Shooter, Flappy clone), a Pharmacy management system using XML storage, and smaller utilities. Besides technical skills, I emphasize <em>clean design, usability, and accessibility</em>. I practice semantic HTML structure with proper headings and alt text for images. I use Git and GitHub for version control—making frequent, small commits to show progress during live class checkpoints. My soft skills include patience, attention to detail, willingness to ask questions, and the ability to explain my approach in simple steps during demos.</p>
+      <p>
+        I have a foundation in <strong>HTML, CSS, and JavaScript</strong> for front-end pages, and I build desktop apps using <strong>C# and Windows Forms</strong> for school projects. 
+        I have created games (Space Shooter, Flappy clone), a Pharmacy management system using XML storage, and smaller utilities. 
+        Besides technical skills, I emphasize <em>clean design, usability, and accessibility</em>. 
+        I practice semantic HTML structure with proper headings and alt text for images. 
+        I use Git and GitHub for version control—making frequent, small commits to show progress during live class checkpoints. 
+        My soft skills include patience, attention to detail, willingness to ask questions, and the ability to explain my approach in simple steps during demos.
+      </p>
 
       <h3 style="margin-top:12px">Skill List</h3>
       <ul>
@@ -239,11 +181,19 @@
 
     <section class="card">
       <h3 class="section-title">Learning Goals</h3>
-      <p>Short-term: deepen JavaScript skills and learn modern front-end frameworks. Long-term: build robust, accessible apps and participate in collaborative projects. I document each learning milestone in my blog so instructors can track progress and I can reflect on improvements.</p>
+      <p>
+        Short-term: deepen JavaScript skills and learn modern front-end frameworks. 
+        Long-term: build robust, accessible apps and participate in collaborative projects. 
+        I document each learning milestone in my blog so instructors can track progress and I can reflect on improvements.
+      </p>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container">© 2025 Bea Sorinio</div></footer>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">© 2025 Bea Sorinio</div>
+  </footer>
+
   <button id="backTop" title="Back to top">↑</button>
   <script src="scripts.js"></script>
 </body>

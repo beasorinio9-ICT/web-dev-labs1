@@ -21,7 +21,7 @@
       margin: auto;
     }
 
-    /*  HEADER  */
+    /* HEADER */
     .site-header {
       background: linear-gradient(90deg, #eb5a7c, #686af1);
       padding: 1rem 0;
@@ -30,37 +30,14 @@
 
     .header-inner {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: center;
     }
 
-    .brand {
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      color: #d8e243;
-    }
-
-    .brand .logo {
-      width: 60px;
-      margin-right: 10px;
-    }
-
-    .brand-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      margin: 0;
-    }
-
-    .tagline {
-      font-size: 0.9rem;
-      color: #1d0e0e;
-    }
-
-    /* ===== NAV ===== */
+    /* NAV */
     .main-nav ul {
       list-style: none;
       display: flex;
+      flex-wrap: wrap;
       gap: 1rem;
       margin: 0;
       padding: 0;
@@ -81,52 +58,7 @@
       color: white;
     }
 
-    /* ===== HERO ===== */
-    .hero {
-      background: #fff0f5;
-      border-radius: 20px;
-      padding: 2rem;
-      margin: 2rem 0;
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    .hero-img {
-      width: 220px;
-      border-radius: 50%;
-      border: 5px solid #fde2e4;
-    }
-
-    .hero-content h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #5a3d3d;
-    }
-
-    .highlight {
-      color: #e75480;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      border-radius: 25px;
-      background: #fbb1bd;
-      color: white;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #e75480;
-    }
-
-    /* ===== SECTIONS ===== */
+    /* SECTIONS */
     .section-title {
       font-family: 'Playfair Display', serif;
       font-size: 1.6rem;
@@ -135,37 +67,26 @@
       color: #5a3d3d;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
     .card {
       background: rgb(248, 207, 231);
-      padding: 1rem;
+      padding: 2rem;
       border-radius: 15px;
       box-shadow: 0 3px 10px rgba(224, 199, 199, 0.438);
-      text-align: center;
-      transition: transform 0.2s ease;
+      margin-top: 2rem;  /* ⬅️ para may space mula header */
+      border: 3px solid #fff; /* ⬅️ border ng section */
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-3px);
+      transition: 0.2s ease;
     }
 
-    .project-card img {
-      border-radius: 12px;
-      margin-bottom: 1rem;
+    ul {
+      margin-top: 0.8rem;
+      padding-left: 1.2rem;
     }
 
-    .project-card h4 {
-      font-family: 'Playfair Display', serif;
-      color: #5a3d3d;
-      margin-bottom: 0.5rem;
-    }
-
-    /* ===== FOOTER ===== */
+    /* FOOTER */
     .site-footer {
       background: #a486f7;
       text-align: center;
@@ -174,12 +95,12 @@
       border-top: 2px solid #fbb1bd;
     }
 
-    .site-footer p {
+    .site-footer p, .site-footer div {
       font-size: 0.9rem;
       color: #5a3d3d;
     }
 
-    /* ===== BACK TO TOP ===== */
+    /* BACK TO TOP */
     #backTop {
       position: fixed;
       bottom: 20px;
@@ -201,6 +122,7 @@
   </style>
 </head>
 <body>
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <nav class="main-nav">
@@ -209,7 +131,7 @@
           <li><a href="about.html">About</a></li>
           <li><a href="skills.html">Skills</a></li>
           <li><a href="projects.html">Projects</a></li>
-          <li><a href="experience.html">Experience</a></li>
+          <li><a href="experience.html" class="active">Experience</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="resume.html">Resume</a></li>
           <li><a href="blog.html">Blog</a></li>
@@ -220,10 +142,20 @@
     </div>
   </header>
 
+  <!-- MAIN -->
   <main class="container">
     <section class="card">
       <h2 class="section-title">Class Projects & Practical Experience</h2>
-      <p>During my studies, I completed several practical projects that demonstrate applied skills in programming, UI design, and file handling. Notable projects include: a Space Shooter game to demonstrate object-oriented principles and event-driven timers; a Flappy Bird clone extended with shooting mechanics to practice collision detection and game loops; and a PharmacyXMLSystem that showcases CRUD operations and persistent storage using XML. Each project includes a README with setup instructions so instructors can run them locally. I also collaborated on small group tasks where we practiced dividing responsibilities, merging code, and presenting results during class checkpoints. Through these experiences I improved my debugging process, careful resource management for images, and writing user-friendly interfaces for peers to test.</p>
+      <p>
+        During my studies, I completed several practical projects that demonstrate applied skills in programming, UI design, and file handling. 
+        Notable projects include: a Space Shooter game to demonstrate object-oriented principles and event-driven timers; 
+        a Flappy Bird clone extended with shooting mechanics to practice collision detection and game loops; 
+        and a PharmacyXMLSystem that showcases CRUD operations and persistent storage using XML. 
+        Each project includes a README with setup instructions so instructors can run them locally. 
+        I also collaborated on small group tasks where we practiced dividing responsibilities, merging code, 
+        and presenting results during class checkpoints. Through these experiences I improved my debugging process, 
+        careful resource management for images, and writing user-friendly interfaces for peers to test.
+      </p>
 
       <h3 style="margin-top:12px">Skills used during projects</h3>
       <ul>
@@ -235,10 +167,13 @@
     </section>
   </main>
 
-  <footer class="site-footer"> <div class="container">© 2025 Bea Sorinio</div></footer>
-  <button id="backTop" title="Back to top">↑</button>
-  <script src="scripts.js"></script>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">© 2025 Bea Sorinio</div>
+  </footer>
+
+  <!-- BACK TO TOP -->
   <button id="backTop" title="Back to top">↑</button>
   <script src="scripts.js"></script>
 </body>
-</html>>
+</html>

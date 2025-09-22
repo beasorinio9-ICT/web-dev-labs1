@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resume</title>
+  <title>Resume | Bea Sorinio</title>
   <link rel="stylesheet" href="style.css">
+
   <style>
     body {
       font-family: 'Quicksand', sans-serif;
-      background-color: #fffafc;
+      background-color: #312429;
       color: #444;
       margin: 0;
       padding: 0;
@@ -22,9 +23,9 @@
 
     /* ===== HEADER ===== */
     .site-header {
-      background: linear-gradient(90deg, #f8d9e0, #fde2e4);
+      background: linear-gradient(90deg, #eb5a7c, #686af1);
       padding: 1rem 0;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 6px rgba(194, 187, 187, 0.05);
     }
 
     .header-inner {
@@ -33,30 +34,6 @@
       align-items: center;
     }
 
-    .brand {
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      color: #5a3d3d;
-    }
-
-    .brand .logo {
-      width: 60px;
-      margin-right: 10px;
-    }
-
-    .brand-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      margin: 0;
-    }
-
-    .tagline {
-      font-size: 0.9rem;
-      color: #9c6b6b;
-    }
-
-    /* ===== NAV ===== */
     .main-nav ul {
       list-style: none;
       display: flex;
@@ -80,93 +57,49 @@
       color: white;
     }
 
-    /* ===== HERO ===== */
-    .hero {
-      background: #fff0f5;
-      border-radius: 20px;
-      padding: 2rem;
-      margin: 2rem 0;
+    /* ===== RESUME SECTION ===== */
+    main {
       display: flex;
+      justify-content: center;
       align-items: center;
-      gap: 2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      min-height: 75vh;
+      padding: 2rem 0;
     }
 
-    .hero-img {
-      width: 220px;
-      border-radius: 50%;
-      border: 5px solid #fde2e4;
+    .resume-section {
+      background: #fce4ec;
+      padding: 2rem;
+      border-radius: 15px;
+      max-width: 700px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
-    .hero-content h2 {
+    .resume-section h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2rem;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
       color: #5a3d3d;
     }
 
-    .highlight {
-      color: #e75480;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      border-radius: 25px;
-      background: #fbb1bd;
-      color: white;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #e75480;
-    }
-
-    /* ===== SECTIONS ===== */
-    .section-title {
+    .resume-section h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      text-align: center;
+      color: #5a3d3d;
+      margin: 1.5rem 0 1rem;
+      font-size: 1.4rem;
+    }
+
+    .resume-section p {
+      line-height: 1.8;
       margin-bottom: 1.5rem;
-      color: #5a3d3d;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .card {
-      background: white;
-      padding: 1rem;
-      border-radius: 15px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-      text-align: center;
-      transition: transform 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .project-card img {
-      border-radius: 12px;
-      margin-bottom: 1rem;
-    }
-
-    .project-card h4 {
-      font-family: 'Playfair Display', serif;
-      color: #5a3d3d;
-      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      color: #333;
     }
 
     /* ===== FOOTER ===== */
     .site-footer {
-      background: #fde2e4;
+      background: #a486f7;
       text-align: center;
       padding: 1rem;
       margin-top: 2rem;
@@ -198,9 +131,11 @@
       background: #e75480;
     }
   </style>
-    <header class="site-header">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html"><img src="images/logo.png" alt="logo" width="56"><div><h1>Bea Sorinio</h1><div class="tagline">BSIE-ICT • Creative portfolio</div></div></a>
       <nav class="main-nav">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -209,48 +144,53 @@
           <li><a href="projects.html">Projects</a></li>
           <li><a href="experience.html">Experience</a></li>
           <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="resume.html">Resume</a></li>
+          <li><a href="resume.html" class="active">Resume</a></li>
           <li><a href="blog.html">Blog</a></li>
-          <li><a class="active" href="hobbies.html">Hobbies</a></li>
+          <li><a href="hobbies.html">Hobbies</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
-</head>
-<body>
-<header>
-  <h1>My Resume</h1>
-</header>
 
-<main>
-  <section>
-    <h2>Education</h2>
-    <p>
-      <strong>Technological University of the Philippines – Manila</strong><br>
-      Bachelor of Science in Industrial Education, Major in ICT (BSIE-ICT)<br>
-      2023 – Present
-    </p>
+  <!-- MAIN CONTENT -->
+  <main>
+    <section class="resume-section">
+      <h1>My Resume</h1>
 
-    <h2>Experience</h2>
-    <p>
-      <strong>Student Projects</strong><br>
-      – Developed a Space Shooter Game in C# Windows Forms.<br>
-      – Built a Pharmacy Management System with XML data handling.<br>
-      – Created a Flappy Bird clone with custom features like shooting and scoring.
-    </p>
+      <h2>Education</h2>
+      <p>
+        <strong>Technological University of the Philippines – Manila</strong><br>
+        Bachelor of Science in Industrial Education, Major in ICT (BSIE-ICT)<br>
+        2023 – Present
+      </p>
 
-    <h2>Certifications & Training</h2>
-    <p>
-      – Certificate in Basic Web Development (HTML & CSS)<br>
-      – School workshops in Object-Oriented Programming<br>
-      – Self-learning courses on GitHub and version control
-    </p>
-  </section>
-</main>
+      <h2>Experience</h2>
+      <p>
+        <strong>Student Projects</strong><br>
+        – Developed a Space Shooter Game in C# Windows Forms.<br>
+        – Built a Pharmacy Management System with XML data handling.<br>
+        – Created a Flappy Bird clone with custom features like shooting and scoring.
+      </p>
 
-<footer>
-  <p>© 2025 Bea Sorinio</p>
-</footer>
+      <h2>Certifications & Training</h2>
+      <p>
+        – Certificate in Basic Web Development (HTML & CSS)<br>
+        – School workshops in Object-Oriented Programming<br>
+        – Self-learning courses on GitHub and version control
+      </p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Bea Sorinio • Student Portfolio • Made with 💕</p>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button id="backTop" title="Back to top">↑</button>
+  <script src="scripts.js"></script>
 </body>
 </html>

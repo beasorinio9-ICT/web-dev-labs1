@@ -9,10 +9,13 @@
   <style>
     body {
       font-family: 'Quicksand', sans-serif;
-      background-color: #fffafc;
+      background-color: #312429;
       color: #444;
       margin: 0;
       padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* ensure footer stays at bottom */
     }
 
     .container {
@@ -23,38 +26,15 @@
 
     /* ===== HEADER ===== */
     .site-header {
-      background: linear-gradient(90deg, #f8d9e0, #fde2e4);
-      padding: 1rem 0;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      background: linear-gradient(90deg, #eb5a7c, #686af1);
+      padding: 1.5rem 0 2.5rem 0; /* dagdag bottom padding */
+      box-shadow: 0 2px 6px rgba(194, 187, 187, 0.05);
     }
 
     .header-inner {
       display: flex;
-      justify-content: space-between;
+      justify-content: center; /* center nav */
       align-items: center;
-    }
-
-    .brand {
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      color: #5a3d3d;
-    }
-
-    .brand .logo {
-      width: 60px;
-      margin-right: 10px;
-    }
-
-    .brand-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      margin: 0;
-    }
-
-    .tagline {
-      font-size: 0.9rem;
-      color: #9c6b6b;
     }
 
     /* ===== NAV ===== */
@@ -69,7 +49,7 @@
     .main-nav a {
       text-decoration: none;
       font-weight: 600;
-      color: #5a3d3d;
+      color: #fff;
       padding: 0.4rem 0.8rem;
       border-radius: 20px;
       transition: 0.3s ease;
@@ -78,105 +58,50 @@
     .main-nav a:hover,
     .main-nav a.active {
       background: #fbb1bd;
-      color: white;
+      color: #312429;
     }
 
-    /* ===== HERO ===== */
-    .hero {
-      background: #fff0f5;
-      border-radius: 20px;
-      padding: 2rem;
-      margin: 2rem 0;
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    /* ===== MAIN CONTENT ===== */
+    main {
+      flex: 1; /* push footer to bottom */
+      margin-top: 3rem; /* dagdag spacing mula header */
+      margin-bottom: 2rem;
     }
 
-    .hero-img {
-      width: 220px;
-      border-radius: 50%;
-      border: 5px solid #fde2e4;
-    }
-
-    .hero-content h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #5a3d3d;
-    }
-
-    .highlight {
-      color: #e75480;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      border-radius: 25px;
-      background: #fbb1bd;
-      color: white;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #e75480;
-    }
-
-    /* ===== SECTIONS ===== */
     .section-title {
       font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       text-align: center;
       margin-bottom: 1.5rem;
       color: #5a3d3d;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
     .card {
-      background: white;
-      padding: 1rem;
+      background: rgb(248, 207, 231);
+      padding: 2rem;
       border-radius: 15px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 3px 10px rgba(224, 199, 199, 0.438);
       text-align: center;
       transition: transform 0.2s ease;
+      margin-top: 1.5rem; /* hiwalay sa header */
     }
 
     .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .project-card img {
-      border-radius: 12px;
-      margin-bottom: 1rem;
-    }
-
-    .project-card h4 {
-      font-family: 'Playfair Display', serif;
-      color: #5a3d3d;
-      margin-bottom: 0.5rem;
+      transform: translateY(-3px);
     }
 
     /* ===== FOOTER ===== */
     .site-footer {
-      background: #fde2e4;
+      background: #a486f7;
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+      padding: 1.5rem;
       border-top: 2px solid #fbb1bd;
+      margin-top: auto; /* stick to bottom */
     }
 
     .site-footer p {
       font-size: 0.9rem;
-      color: #5a3d3d;
+      color: #312429;
     }
 
     /* ===== BACK TO TOP ===== */
@@ -201,9 +126,9 @@
   </style>
 </head>
 <body>
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html"><img src="images/logo.png" alt="logo" width="56"><div><h1>Bea Sorinio</h1><div class="tagline">BSIE-ICT • Creative life</div></div></a>
       <nav class="main-nav">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -221,14 +146,30 @@
     </div>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main class="container">
     <section class="card">
       <h2 class="section-title">Hobbies & Interests</h2>
-      <p>I enjoy illustration, pastel color studies, and journaling. These hobbies influence the aesthetic choices in my portfolio — I choose soft palettes and rounded shapes to create a calm, friendly experience. When I'm learning new UI patterns, I sketch quick mockups on paper or digital tools before coding them. I find that practicing visual composition and color harmony improves my ability to make cleaner interfaces. I also occasionally cook or bake simple recipes, which I photograph for the gallery and sometimes include as blog posts. These activities help me stay creative and balanced while managing coursework.</p>
+      <p>
+        I enjoy illustration, pastel color studies, and journaling. These hobbies influence the aesthetic choices in my portfolio — I choose soft palettes and rounded shapes to create a calm, friendly experience.
+      </p>
+      <p>
+        When I'm learning new UI patterns, I sketch quick mockups on paper or digital tools before coding them. I find that practicing visual composition and color harmony improves my ability to make cleaner interfaces.
+      </p>
+      <p>
+        I also occasionally cook or bake simple recipes, which I photograph for the gallery and sometimes include as blog posts. These activities help me stay creative and balanced while managing coursework.
+      </p>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container">© 2025 Bea Sorinio</div></footer>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Bea Sorinio</p>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
   <button id="backTop" title="Back to top">↑</button>
   <script src="scripts.js"></script>
 </body>

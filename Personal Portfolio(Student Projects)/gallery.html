@@ -6,7 +6,7 @@
   <title>Bea Sorinio | Gallery</title>
   <meta name="description" content="Gallery — screenshots and photos of Bea's projects and creative works.">
   <link rel="stylesheet" href="style.css">
-<style>
+  <style>
     body {
       font-family: 'Quicksand', sans-serif;
       background-color: #312429;
@@ -21,7 +21,7 @@
       margin: auto;
     }
 
-    /*  HEADER  */
+    /* HEADER */
     .site-header {
       background: linear-gradient(90deg, #eb5a7c, #686af1);
       padding: 1rem 0;
@@ -30,37 +30,14 @@
 
     .header-inner {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: center;
     }
 
-    .brand {
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      color: #d8e243;
-    }
-
-    .brand .logo {
-      width: 60px;
-      margin-right: 10px;
-    }
-
-    .brand-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      margin: 0;
-    }
-
-    .tagline {
-      font-size: 0.9rem;
-      color: #1d0e0e;
-    }
-
-    /* ===== NAV ===== */
+    /* NAV */
     .main-nav ul {
       list-style: none;
       display: flex;
+      flex-wrap: wrap;
       gap: 1rem;
       margin: 0;
       padding: 0;
@@ -81,91 +58,51 @@
       color: white;
     }
 
-    /* ===== HERO ===== */
-    .hero {
-      background: #fff0f5;
-      border-radius: 20px;
-      padding: 2rem;
-      margin: 2rem 0;
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    .hero-img {
-      width: 220px;
-      border-radius: 50%;
-      border: 5px solid #fde2e4;
-    }
-
-    .hero-content h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #5a3d3d;
-    }
-
-    .highlight {
-      color: #e75480;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      border-radius: 25px;
-      background: #fbb1bd;
-      color: white;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #e75480;
-    }
-
-    /* ===== SECTIONS ===== */
+    /* SECTION */
     .section-title {
       font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       text-align: center;
       margin-bottom: 1.5rem;
-      color: #5a3d3d;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      color: #f9d1e4;
     }
 
     .card {
       background: rgb(248, 207, 231);
-      padding: 1rem;
+      padding: 2rem;
       border-radius: 15px;
       box-shadow: 0 3px 10px rgba(224, 199, 199, 0.438);
+      margin-top: 2rem; /* ⬅️ para hindi dikit sa header */
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      justify-items: center;
+    }
+
+    figure {
+      margin: 0;
       text-align: center;
-      transition: transform 0.2s ease;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .project-card img {
+    .project-thumb {
+      width: 100%;
+      max-width: 220px;
+      height: auto;
       border-radius: 12px;
-      margin-bottom: 1rem;
+      border: 4px solid #fff; /* ⬅️ border sa bawat picture */
+      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+      transition: transform 0.2s ease;
+      display: block;
     }
 
-    .project-card h4 {
-      font-family: 'Playfair Display', serif;
-      color: #5a3d3d;
-      margin-bottom: 0.5rem;
+    .project-thumb:hover {
+      transform: scale(1.05);
     }
 
-    /* ===== FOOTER ===== */
+    /* FOOTER */
     .site-footer {
       background: #a486f7;
       text-align: center;
@@ -174,22 +111,12 @@
       border-top: 2px solid #fbb1bd;
     }
 
-    .site-footer p {
+    .site-footer p, .site-footer div {
       font-size: 0.9rem;
       color: #5a3d3d;
     }
 
-     .project-thumb {
-     width: 100%;
-     max-width: 250px; /* limit size ng image */
-     height: auto;
-     border-radius: 10px;
-     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-     display: block;
-     margin: 0 auto; /* center sa figure */
-}
-      
-    /* ===== BACK TO TOP ===== */
+    /* BACK TO TOP */
     #backTop {
       position: fixed;
       bottom: 20px;
@@ -211,17 +138,17 @@
   </style>
 </head>
 <body>
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-
       <nav class="main-nav">
         <ul>
-         <li><a href="index.html">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="skills.html">Skills</a></li>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="experience.html">Experience</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
           <li><a href="resume.html">Resume</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="hobbies.html">Hobbies</a></li>
@@ -231,43 +158,39 @@
     </div>
   </header>
 
+  <!-- MAIN -->
   <main class="container">
     <section class="card">
       <h2 class="section-title">My Photos</h2>
-
       <div class="grid">
         <figure>
           <img src="images/image.png" alt="Project UI mockup 1" class="project-thumb">
-       
-        </figure>
-
-        <figure>
-          <img src="images/me1.jpg" alt="Project screenshot 2" class="project-thumb"> 
-      
-        </figure>
-
-          <figure>
-          <img src="images/me.jpg" alt="Project screenshot 2" class="project-thumb"> 
-      
-        </figure>
-
-        <figure>
-          <img src="images/321382755_556253109850436_6108183507302445868_n.jpg" alt="Project screenshot 2" class="project-thumb"> 
-      
         </figure>
         <figure>
-          <img src="images/potato.jpg" alt="Personal sketch and color palette" class="project-thumb">
-          
+          <img src="images/me1.jpg" alt="Bea personal photo 1" class="project-thumb">
         </figure>
         <figure>
-          <img src="images/24714015-95b0-4363-b8e9-36ee169d6f6a.jpg" alt="Personal sketch and color palette" class="project-thumb">
-          
+          <img src="images/me.jpg" alt="Bea personal photo 2" class="project-thumb">
+        </figure>
+        <figure>
+          <img src="images/321382755_556253109850436_6108183507302445868_n.jpg" alt="Bea candid photo" class="project-thumb">
+        </figure>
+        <figure>
+          <img src="images/potato.jpg" alt="Funny photo potato style" class="project-thumb">
+        </figure>
+        <figure>
+          <img src="images/24714015-95b0-4363-b8e9-36ee169d6f6a.jpg" alt="Creative snapshot" class="project-thumb">
         </figure>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container">© 2025 Bea Sorinio</div></footer>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">© 2025 Bea Sorinio</div>
+  </footer>
+
+  <!-- BACK TO TOP -->
   <button id="backTop" title="Back to top">↑</button>
   <script src="scripts.js"></script>
 </body>
