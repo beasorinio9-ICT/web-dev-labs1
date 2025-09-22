@@ -24,7 +24,7 @@
     /* ===== HEADER ===== */
     .site-header {
       background: linear-gradient(90deg, #eb5a7c, #686af1);
-      padding: 1rem 0;
+      padding: 1rem 0 2.5rem 0; /* extra bottom padding */
       box-shadow: 0 2px 6px rgba(194, 187, 187, 0.05);
     }
 
@@ -61,7 +61,7 @@
     main {
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       min-height: 75vh;
       padding: 2rem 0;
     }
@@ -72,7 +72,7 @@
       border-radius: 15px;
       max-width: 700px;
       width: 100%;
-      text-align: center;
+      text-align: left;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
@@ -81,6 +81,7 @@
       font-size: 2rem;
       margin-bottom: 2rem;
       color: #5a3d3d;
+      text-align: center;
     }
 
     .resume-section h2 {
@@ -90,11 +91,16 @@
       font-size: 1.4rem;
     }
 
-    .resume-section p {
+    .resume-section p, 
+    .resume-section li {
       line-height: 1.8;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.8rem;
       font-size: 1rem;
       color: #333;
+    }
+
+    ul {
+      padding-left: 1.2rem;
     }
 
     /* ===== FOOTER ===== */
@@ -142,7 +148,6 @@
           <li><a href="about.html">About</a></li>
           <li><a href="skills.html">Skills</a></li>
           <li><a href="projects.html">Projects</a></li>
-          <li><a href="experience.html">Experience</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="resume.html" class="active">Resume</a></li>
           <li><a href="blog.html">Blog</a></li>
@@ -158,26 +163,53 @@
     <section class="resume-section">
       <h1>My Resume</h1>
 
-      <h2>Education</h2>
+      <h2>Contact Info</h2>
+      <p>
+        <strong>Bea A. Sorinio</strong><br>
+        Birthday: December 03, 2003 (20 Years Old)<br>
+        Address: 1909B Mindanao, Palawan Street, Sampaloc Manila<br>
+        Email: <a href="mailto:beasorinio9@gmail.com">Beasorinio9@gmail.com</a><br>
+        Phone: 09559446853
+      </p>
+
+      <h2>Objectives</h2>
+      <p>
+        To be part of a dynamic company where I can contribute my skills and expand my learning.<br>
+        To work with a driven and enthusiastic team.
+      </p>
+
+      <h2>Skills</h2>
+      <ul>
+        <li>Cooking</li>
+        <li>Computer literate</li>
+        <li>Well-versed in English and Filipino (oral & written)</li>
+        <li>Flexibility</li>
+        <li>Teamwork</li>
+        <li>Creativity Skills</li>
+        <li>Communication Skills</li>
+        <li>Time Management</li>
+      </ul>
+
+      <h2>Educational History</h2>
       <p>
         <strong>Technological University of the Philippines – Manila</strong><br>
         Bachelor of Science in Industrial Education, Major in ICT (BSIE-ICT)<br>
         2023 – Present
       </p>
-
-      <h2>Experience</h2>
       <p>
-        <strong>Student Projects</strong><br>
-        – Developed a Space Shooter Game in C# Windows Forms.<br>
-        – Built a Pharmacy Management System with XML data handling.<br>
-        – Created a Flappy Bird clone with custom features like shooting and scoring.
+        <strong>Cang Alwang National High School</strong><br>
+        Senior High School – TVL ICT<br>
+        2020 – 2022
       </p>
-
-      <h2>Certifications & Training</h2>
       <p>
-        – Certificate in Basic Web Development (HTML & CSS)<br>
-        – School workshops in Object-Oriented Programming<br>
-        – Self-learning courses on GitHub and version control
+        <strong>Cang Alwang National High School</strong><br>
+        Junior High School<br>
+        2016 – 2020
+      </p>
+      <p>
+        <strong>Caipilan Elementary School</strong><br>
+        Grade School<br>
+        2010 – 2016
       </p>
     </section>
   </main>
