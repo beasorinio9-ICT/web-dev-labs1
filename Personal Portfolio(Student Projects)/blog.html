@@ -7,13 +7,15 @@
   <meta name="description" content="Blog — reflections, how-to notes, and progress updates by Bea Sorinio.">
   <link rel="stylesheet" href="style.css">
   <style>
-
     body {
       font-family: 'Quicksand', sans-serif;
-      background-color: #fffafc;
+      background-color: #312429;
       color: #444;
       margin: 0;
       padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     .container {
@@ -22,49 +24,27 @@
       margin: auto;
     }
 
-    /* ===== HEADER ===== */
+    /* HEADER */
     .site-header {
-      background: linear-gradient(90deg, #f8d9e0, #fde2e4);
+      background: linear-gradient(90deg, #eb5a7c, #686af1);
       padding: 1rem 0;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 6px rgba(194, 187, 187, 0.05);
     }
 
     .header-inner {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: center;
     }
 
-    .brand {
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      color: #5a3d3d;
-    }
-
-    .brand .logo {
-      width: 60px;
-      margin-right: 10px;
-    }
-
-    .brand-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      margin: 0;
-    }
-
-    .tagline {
-      font-size: 0.9rem;
-      color: #9c6b6b;
-    }
-
-    /* ===== NAV ===== */
+    /* NAV */
     .main-nav ul {
       list-style: none;
       display: flex;
+      flex-wrap: wrap;
       gap: 1rem;
       margin: 0;
       padding: 0;
+      justify-content: center;
     }
 
     .main-nav a {
@@ -82,105 +62,51 @@
       color: white;
     }
 
-    /* ===== HERO ===== */
-    .hero {
-      background: #fff0f5;
-      border-radius: 20px;
-      padding: 2rem;
-      margin: 2rem 0;
+    /* MAIN */
+    main {
+      flex: 1;
       display: flex;
       align-items: center;
-      gap: 2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      justify-content: center;
+      padding: 2rem 0;
     }
 
-    .hero-img {
-      width: 220px;
-      border-radius: 50%;
-      border: 5px solid #fde2e4;
+    .card {
+      background: rgb(248, 207, 231);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 3px 10px rgba(224, 199, 199, 0.438);
+      max-width: 800px;
+      text-align: center;
     }
 
-    .hero-content h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #5a3d3d;
-    }
-
-    .highlight {
-      color: #e75480;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      border-radius: 25px;
-      background: #fbb1bd;
-      color: white;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #e75480;
-    }
-
-    /* ===== SECTIONS ===== */
     .section-title {
       font-family: 'Playfair Display', serif;
       font-size: 1.6rem;
-      text-align: center;
       margin-bottom: 1.5rem;
       color: #5a3d3d;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .card {
-      background: white;
-      padding: 1rem;
-      border-radius: 15px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-      text-align: center;
-      transition: transform 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .project-card img {
-      border-radius: 12px;
-      margin-bottom: 1rem;
-    }
-
-    .project-card h4 {
-      font-family: 'Playfair Display', serif;
+    .card h3 {
+      margin-top: 1.5rem;
       color: #5a3d3d;
-      margin-bottom: 0.5rem;
     }
 
-    /* ===== FOOTER ===== */
+    /* FOOTER */
     .site-footer {
-      background: #fde2e4;
+      background: #a486f7;
       text-align: center;
       padding: 1rem;
-      margin-top: 2rem;
       border-top: 2px solid #fbb1bd;
     }
 
     .site-footer p {
       font-size: 0.9rem;
       color: #5a3d3d;
+      margin: 0;
     }
 
-    /* ===== BACK TO TOP ===== */
+    /* BACK TO TOP */
     #backTop {
       position: fixed;
       bottom: 20px;
@@ -202,9 +128,8 @@
   </style>
 </head>
 <body>
-  <header class="site-header">
+<header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html"><img src="images/logo.png" alt="logo" width="56"><div><h1>Bea Sorinio</h1><div class="tagline">BSIE-ICT • Reflections</div></div></a>
       <nav class="main-nav">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -216,7 +141,7 @@
           <li><a href="experience.html">Experience</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="resume.html">Resume</a></li>
-          <li><a href="blog.html">Blog</a></li>
+          <li><a class="active" href="blog.html">Blog</a></li>
           <li><a href="hobbies.html">Hobbies</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -224,19 +149,27 @@
     </div>
   </header>
 
+  <!-- MAIN -->
   <main class="container">
     <section class="card">
       <h2 class="section-title">How I Plan Projects</h2>
       <p>Every project begins with a simple plan: sketch the interface, list required features, and break tasks into small commits. For class mini-projects, I create a short README so instructors can run the project locally and review changes on GitHub. I keep notes on what went well and what I learned. This blog page contains quick posts about debugging tips, design decisions, and commands I used in Git. These short reflections help me prepare for live grading sessions and show continuous progress. I often include screenshots and code snippets when relevant so peers and instructors can follow my work more easily.</p>
 
-      <article style="margin-top:12px">
+      <article>
         <h3>Post: Adding a Contact Form (frontend only)</h3>
         <p>I added a simple contact form to my portfolio. Since there's no backend for this class activity, the form shows a friendly confirmation message after submission. This satisfies the interactivity requirement and demonstrates basic form handling with JavaScript. For future improvements, I plan to learn how to connect a lightweight backend or use email services if allowed.</p>
       </article>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container">© 2025 Bea Sorinio</div></footer>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Bea Sorinio</p>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
   <button id="backTop" title="Back to top">↑</button>
   <script src="scripts.js"></script>
 </body>
