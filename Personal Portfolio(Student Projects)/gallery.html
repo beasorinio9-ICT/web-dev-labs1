@@ -6,10 +6,10 @@
   <title>Bea Sorinio | Gallery</title>
   <meta name="description" content="Gallery — screenshots and photos of Bea's projects and creative works.">
   <link rel="stylesheet" href="style.css">
-  <style>
+<style>
     body {
       font-family: 'Quicksand', sans-serif;
-      background-color: #fffafc;
+      background-color: #312429;
       color: #444;
       margin: 0;
       padding: 0;
@@ -21,11 +21,11 @@
       margin: auto;
     }
 
-    /* ===== HEADER ===== */
+    /*  HEADER  */
     .site-header {
-      background: linear-gradient(90deg, #f8d9e0, #fde2e4);
+      background: linear-gradient(90deg, #eb5a7c, #686af1);
       padding: 1rem 0;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 6px rgba(194, 187, 187, 0.05);
     }
 
     .header-inner {
@@ -38,7 +38,7 @@
       text-decoration: none;
       display: flex;
       align-items: center;
-      color: #5a3d3d;
+      color: #d8e243;
     }
 
     .brand .logo {
@@ -54,7 +54,7 @@
 
     .tagline {
       font-size: 0.9rem;
-      color: #9c6b6b;
+      color: #1d0e0e;
     }
 
     /* ===== NAV ===== */
@@ -142,10 +142,10 @@
     }
 
     .card {
-      background: white;
+      background: rgb(248, 207, 231);
       padding: 1rem;
       border-radius: 15px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 3px 10px rgba(224, 199, 199, 0.438);
       text-align: center;
       transition: transform 0.2s ease;
     }
@@ -167,7 +167,7 @@
 
     /* ===== FOOTER ===== */
     .site-footer {
-      background: #fde2e4;
+      background: #a486f7;
       text-align: center;
       padding: 1rem;
       margin-top: 2rem;
@@ -179,6 +179,16 @@
       color: #5a3d3d;
     }
 
+     .project-thumb {
+     width: 100%;
+     max-width: 250px; /* limit size ng image */
+     height: auto;
+     border-radius: 10px;
+     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+     display: block;
+     margin: 0 auto; /* center sa figure */
+}
+      
     /* ===== BACK TO TOP ===== */
     #backTop {
       position: fixed;
@@ -203,7 +213,7 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html"><img src="images/logo.png" alt="logo" width="56"><div><h1>Bea Sorinio</h1><div class="tagline">BSIE-ICT • Portfolio</div></div></a>
+
       <nav class="main-nav">
         <ul>
          <li><a href="index.html">Home</a></li>
@@ -223,20 +233,35 @@
 
   <main class="container">
     <section class="card">
-      <h2 class="section-title">Photos & Screenshots</h2>
-      <p>This gallery shows project screenshots, UI mockups, and a few personal photos that reflect my creative process. Each image includes descriptive alt text for accessibility. Replace the placeholder images in the /images folder with your own project screenshots and photos. The gallery below is a responsive grid — click an image to view it larger (you can implement a lightbox later if desired).</p>
+      <h2 class="section-title">My Photos</h2>
+
       <div class="grid">
         <figure>
-          <img src="images/gallery1.jpg" alt="Project UI mockup 1" class="project-thumb">
-          <figcaption>UI mockup for a web mini-project</figcaption>
+          <img src="images/image.png" alt="Project UI mockup 1" class="project-thumb">
+       
+        </figure>
+
+        <figure>
+          <img src="images/me1.jpg" alt="Project screenshot 2" class="project-thumb"> 
+      
+        </figure>
+
+          <figure>
+          <img src="images/me.jpg" alt="Project screenshot 2" class="project-thumb"> 
+      
+        </figure>
+
+        <figure>
+          <img src="images/321382755_556253109850436_6108183507302445868_n.jpg" alt="Project screenshot 2" class="project-thumb"> 
+      
         </figure>
         <figure>
-          <img src="images/gallery2.jpg" alt="Project screenshot 2" class="project-thumb">
-          <figcaption>Space Shooter screenshot</figcaption>
+          <img src="images/potato.jpg" alt="Personal sketch and color palette" class="project-thumb">
+          
         </figure>
         <figure>
-          <img src="images/gallery3.jpg" alt="Personal sketch and color palette" class="project-thumb">
-          <figcaption>Color palette study</figcaption>
+          <img src="images/24714015-95b0-4363-b8e9-36ee169d6f6a.jpg" alt="Personal sketch and color palette" class="project-thumb">
+          
         </figure>
       </div>
     </section>
