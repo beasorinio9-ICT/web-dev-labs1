@@ -9,7 +9,7 @@
   <style>
     body {
       font-family: 'Quicksand', sans-serif;
-      background-color: #fffafc;
+      background-color: #312429;
       color: #444;
       margin: 0;
       padding: 0;
@@ -21,11 +21,11 @@
       margin: auto;
     }
 
-    /* ===== HEADER ===== */
+    /*  HEADER  */
     .site-header {
-      background: linear-gradient(90deg, #f8d9e0, #fde2e4);
+      background: linear-gradient(90deg, #eb5a7c, #686af1);
       padding: 1rem 0;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 6px rgba(194, 187, 187, 0.05);
     }
 
     .header-inner {
@@ -38,7 +38,7 @@
       text-decoration: none;
       display: flex;
       align-items: center;
-      color: #5a3d3d;
+      color: #d8e243;
     }
 
     .brand .logo {
@@ -54,7 +54,7 @@
 
     .tagline {
       font-size: 0.9rem;
-      color: #9c6b6b;
+      color: #1d0e0e;
     }
 
     /* ===== NAV ===== */
@@ -142,10 +142,10 @@
     }
 
     .card {
-      background: white;
+      background: rgb(248, 207, 231);
       padding: 1rem;
       border-radius: 15px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 3px 10px rgba(224, 199, 199, 0.438);
       text-align: center;
       transition: transform 0.2s ease;
     }
@@ -167,7 +167,7 @@
 
     /* ===== FOOTER ===== */
     .site-footer {
-      background: #fde2e4;
+      background: #a486f7;
       text-align: center;
       padding: 1rem;
       margin-top: 2rem;
@@ -199,11 +199,12 @@
       background: #e75480;
     }
   </style>
+
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html"><img src="images/logo.png" alt="logo" width="56"><div><h1>Bea Sorinio</h1><div class="tagline">BSIE-ICT • Creative portfolio</div></div></a>
+
       <nav class="main-nav">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -228,19 +229,13 @@
       <h2 class="section-title">Featured Projects & Details</h2>
       <article>
         <h3>Space Shooter (Windows Forms)</h3>
-        <img src="images/project-space-shooter.jpg" alt="Space Shooter screenshot" class="project-thumb">
+        <img src="images/project1.jpg" alt="Space Shooter screenshot" class="project-thumb">
         <p>This is a class project demonstrating inheritance, timers, collision detection, and image resource usage. Player shoots enemies while surviving waves. The project includes player health, enemy bullets, and scoring. The codebase has clear comments and resource images named consistently so Visual Studio can import them into Resources. For instructors: open the solution, ensure image resources are added, and run in Debug to test gameplay. The page above contains a short README summary and the GitHub repo link (add your repo link here once uploaded).</p>
       </article>
 
       <article style="margin-top:12px">
-        <h3>Flappy Bird Clone (Windows Forms)</h3>
-        <img src="images/project-flappy.jpg" alt="Flappy Bird screenshot" class="project-thumb">
-        <p>This project replicates Flappy Bird mechanics and adds shooting mechanics and scoring. Includes Start button and round-based scoring. I implemented collision detection between bullets and enemies, a restart flow, and visual assets stored in the project's resources. The project is documented so the instructor can run it locally and verify functionality during live grading.</p>
-      </article>
-
-      <article style="margin-top:12px">
         <h3>PharmacyXMLSystem</h3>
-        <img src="images/project-pharmacy.jpg" alt="Pharmacy system screenshot" class="project-thumb">
+        <img src="images/project2.jpg" alt="Pharmacy system screenshot" class="project-thumb">
         <p>Inventory and billing app using XML for persistent storage. Features add/update/delete/search, low stock alerts, and billing with a DataGridView interface. The XML helper class manages storage and retrieval, making the app portable and easy to inspect. The project is ideal for demonstrating practical CRUD and file handling in C#.</p>
       </article>
     </section>
