@@ -1,0 +1,8 @@
+@media (min-width: 600px) {
+  /* assuming 'bax' is a class name, e.g., .box */
+  .box {
+    display: grid;
+    grid-template-columns: 2; /* or a proper value like '1fr 1fr' or 'repeat(2, 1fr)' */
+  }
+}
+
