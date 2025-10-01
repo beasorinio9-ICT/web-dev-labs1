@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design Example</title>
+    <style>
+        /* Default styles for all screen sizes */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            border: 2px solid #333;
+            padding: 10px;
+        }
+
+        .item {
+            background-color: lightgreen;
+            border: 1px solid #005600;
+            padding: 15px;
+            margin: 5px;
+            text-align: center;
+        }
+
+        /* Styles for screens with a maximum width of 480px (e.g., mobile phones) */
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+            .container {
+                display: block; /* default behavior for small screens */
+            }
+        }
+
+        /* Styles for screens with a minimum width of 1024px (e.g., desktops) */
+        @media (min-width: 1024px) {
+            .container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+            body {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Activity 3: Media Queries</h1>
+    <p>Resize your browser window to see how the font size of this text and the layout of the container below change at different screen widths.</p>
+    <div class="container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+    </div>
+</body>
+</html>
+
