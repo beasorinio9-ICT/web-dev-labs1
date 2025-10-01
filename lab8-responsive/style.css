@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Stacks boxes vertically by default for mobile */
+    gap: 20px;
+    padding: 10px;
+}
+
+.box {
+    background-color: #ffffff;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.box h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.box-1 {
+    background-color: #e6f7ff;
+}
+
+.box-2 {
+    background-color: #fff0e6;
+}
+
+.box-3 {
+    background-color: #e6ffe6;
+}
+
+/* Media query for screens wider than 768px */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row; /* Arranges boxes side-by-side for wider screens */
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+    
+    .box {
+        flex: 1; /* Allows boxes to grow and take up equal space */
+    }
+}
+Sent
+Write to

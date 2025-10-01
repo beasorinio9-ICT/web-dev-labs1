@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Flexbox Layout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box box-1">
+            <h2>Box 1: Project Details</h2>
+            <p>This box contains general information about the project. It outlines the objective of creating a responsive layout with Flexbox and a media query. The goal is to ensure the design adapts gracefully to various screen sizes, starting with a mobile-first approach.</p>
+        </div>
+        <div class="box box-2">
+            <h2>Box 2: Key Features</h2>
+            <ul>
+                <li>Mobile-First Design: The layout is designed for mobile devices first, with content stacked vertically.</li>
+                <li>Flexbox Layout: Utilizes CSS Flexbox to manage the alignment and spacing of the boxes.</li>
+                <li>Media Query: A media query is used to apply a different layout for larger screens, changing the direction of the boxes to a row.</li>
+                <li>Responsiveness: The layout seamlessly transitions from a single column to multiple columns as the screen size increases.</li>
+            </ul>
+        </div>
+        <div class="box box-3">
+            <h2>Box 3: Implementation Notes</h2>
+            <p>This section provides a summary of the implementation steps. The container element is set to display: flex. For mobile, the flex-direction is column. A media query (@media (min-width: 768px)) is used to override this, setting the flex-direction to row for wider screens. This ensures a clean and efficient layout on all devices.</p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
