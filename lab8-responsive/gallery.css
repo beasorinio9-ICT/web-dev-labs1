@@ -1,0 +1,32 @@
+/* Base styles for the gallery container */
+.gallery-container {
+    display: grid;
+    gap: 10px;
+    padding: 10px;
+}
+
+/* Default for small screens (1 column) */
+.gallery-container {
+    grid-template-columns: 1fr;
+}
+
+/* Media query for tablets (2 columns) */
+@media screen and (min-width: 481px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Media query for desktops (3 columns) */
+@media screen and (min-width: 769px) {
+    .gallery-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Basic styling for images inside the gallery */
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
