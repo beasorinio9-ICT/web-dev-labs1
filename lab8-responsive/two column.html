@@ -3,21 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexible Two-Column Layout</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Activity 5: Responsive Two-Column Layout</title>
+    <style>
+        /* Base styling for all screens */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column; /* Default: stack columns vertically for small screens */
+            gap: 20px;
+        }
+
+        .column {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .text-column {
+            background-color: #f9f9f9;
+        }
+
+        .image-column img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+        }
+
+        /* Media query for wider screens (768px and above) */
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row; /* Arrange columns side-by-side on wider screens */
+            }
+
+            .column {
+                flex: 1; /* Distribute available space equally */
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <div class="flex-container">
-        <div class="text-column">
-            <h2>Text Section</h2>
-            <p>This is the text that will be on the left side on wider screens. On small screens, this section will be stacked on top of the image.</p>
-            <p>Flexbox is a powerful CSS layout module that allows you to arrange items in a container, making it easier to create flexible and responsive designs.</p>
+    <h1>Activity 5: Applied Exercise-Flexible Two-Column Layout</h1>
+    <div class="container">
+        <div class="column text-column">
+            <h2>Text on the Left</h2>
+            <p>This section contains the text content. The instructions specify that this part should be on the left side on wider screens.</p>
+            <p>It will stack vertically above the image on smaller screens due to the Flexbox layout.</p>
         </div>
-        <div class="image-column">
-            <img src="https://via.placeholder.com/600x400" alt="Placeholder Image">
+        <div class="column image-column">
+            <h2>Image on the Right</h2>
+            <img src="images/LA 1 Sorinio Bea A. .jpg" alt="Placeholder Image">
+            <p>This is a placeholder image. The instructions require the image to be on the right side on wider screens and stack below the text on small screens.</p>
         </div>
     </div>
 
 </body>
 </html>
+
