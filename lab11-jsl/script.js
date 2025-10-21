@@ -1,4 +1,4 @@
-// A variable declaration using let
+// Variable declaration using let
 let number1 = 10;
 let number2 = 5;
 
@@ -6,8 +6,4 @@ let number2 = 5;
 let sum = number1 + number2;
 
 // A simple console.log() output
-console.log("The first number is:", number1);
-console.log("The second number is:", number2);
-console.log("The sum of the two numbers is:", sum);
-
-
+console.log("The sum of number1 and number2 is: " + sum);
