@@ -1,56 +1,95 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f2f5;
+    background: linear-gradient(135deg, #89f7fe, #66a6ff);
     margin: 0;
 }
 
 .calculator-container {
     background: #ffffff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     text-align: center;
     max-width: 400px;
-    width: 100%;
+    width: 90%;
+    transition: transform 0.3s ease;
+}
+
+.calculator-container:hover {
+    transform: translateY(-5px);
 }
 
 h1 {
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    font-size: 28px;
+    text-shadow: 1px 1px 2px #ddd;
 }
 
 .input-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
 }
 
 input[type="number"] {
-    width: 90%;
+    width: 100%;
     padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
     font-size: 16px;
     box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-color: #66a6ff;
+    box-shadow: 0 0 5px #66a6ff;
+}
+
+.button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 button {
     background-color: #007bff;
     color: white;
     border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-size: 18px;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 17px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
-    box-sizing: border-box;
+    transition: background-color 0.3s ease, transform 0.2s;
 }
 
 button:hover {
     background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Clear Button */
+.clear-btn {
+    background-color: #ff4757;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.clear-btn:hover {
+    background-color: #c82333;
 }
 
 .result-label {
@@ -61,8 +100,10 @@ button:hover {
 }
 
 .result-display {
-    font-size: 28px;
+    font-size: 32px;
     color: #28a745;
     font-weight: bold;
-    min-height: 35px;
+    min-height: 40px;
+    margin-top: 10px;
+    transition: all 0.3s ease;
 }
