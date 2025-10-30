@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎯 Activity 3: Creative Loop Counter</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fefae0, #faedcd, #fde4cf);
+      text-align: center;
+      padding: 50px;
+      color: #3e2723;
+      transition: background 1s ease;
+    }
+
+    h2 {
+      background-color: #d4a373;
+      color: white;
+      padding: 15px;
+      border-radius: 12px;
+      width: 60%;
+      margin: 0 auto 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    #output {
+      background-color: #fff8e1;
+      width: 60%;
+      margin: 0 auto;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      font-size: 18px;
+      line-height: 1.8;
+      min-height: 150px;
+    }
+
+    button {
+      background-color: #f77f00;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 25px;
+    }
+
+    button:hover {
+      background-color: #dc2f02;
+      transform: scale(1.05);
+    }
+
+    .even {
+      color: #40916c;
+      font-weight: bold;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .odd {
+      color: #ff6b6b;
+      font-weight: bold;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>💫 Activity 3: Dynamic Loop Counter</h2>
+
+  <div id="output">Click the button below to start counting!</div>
+  <button onclick="startCounting()">▶ Start Counting</button>
+
+  <script>
+    function startCounting() {
+      const output = document.getElementById("output");
+      output.innerHTML = ""; // clear previous results
+      
+      // 🎲 Loop numbers from 0–10 with animation
+      for (let i = 0; i <= 10; i++) {
+        setTimeout(() => {
+          const span = document.createElement("div");
+          span.className = i % 2 === 0 ? "even" : "odd";
+          span.textContent = `Number: ${i}`;
+          output.appendChild(span);
+        }, i * 400); // Delay for animation
+      }
+    }
+  </script>
+
+</body>
+</html>

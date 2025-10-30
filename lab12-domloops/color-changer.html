@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>🌈 Magical Background Changer 🌈</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #f2dbd6, #fefae0);
+      transition: background 0.8s ease-in-out;
+    }
+
+    h2 {
+      color: #333;
+      font-size: 28px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      margin-bottom: 25px;
+    }
+
+    .controls {
+      background-color: #ffffffdd;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+    }
+
+    .controls:hover {
+      transform: scale(1.03);
+    }
+
+    select {
+      padding: 12px 18px;
+      border-radius: 10px;
+      border: 2px solid #bde0fe;
+      font-size: 16px;
+      margin-right: 10px;
+      cursor: pointer;
+      background-color: #f9f9f9;
+      transition: 0.3s;
+    }
+
+    select:hover {
+      background-color: #eaf4fc;
+    }
+
+    button {
+      padding: 12px 18px;
+      margin: 10px;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    #changeBtn {
+      background-color: #a2d2ff;
+    }
+
+    #changeBtn:hover {
+      background-color: #74c0fc;
+    }
+
+    #resetBtn {
+      background-color: #ffafcc;
+    }
+
+    #resetBtn:hover {
+      background-color: #ff7096;
+    }
+
+    footer {
+      margin-top: 50px;
+      color: #555;
+      font-size: 14px;
+    }
+
+    /* Floating emoji animation */
+    @keyframes float {
+      0% { transform: translateY(0px); opacity: 1; }
+      50% { transform: translateY(-20px); opacity: 0.8; }
+      100% { transform: translateY(0px); opacity: 1; }
+    }
+
+    .emoji {
+      font-size: 35px;
+      animation: float 3s infinite ease-in-out;
+    }
+  </style>
+
+  <script>
+    function changeBackground() {
+      const color = document.getElementById("colorSelect").value;
+      document.body.style.background = color;
+    }
+
+    function resetBackground() {
+      document.body.style.background = "linear-gradient(135deg, #f2dbd6, #fefae0)";
+    }
+  </script>
+</head>
+<body>
+  <h2>🎨 Magical Background Changer ✨</h2>
+  <div class="emoji">🌈</div>
+
+  <div class="controls">
+    <label for="colorSelect" style="font-size: 18px; font-weight: bold;">Pick your vibe:</label><br><br>
+    <select id="colorSelect">
+      <option value="linear-gradient(135deg, #a2d2ff, #cdb4db)">Dreamy Blue 💙</option>
+      <option value="linear-gradient(135deg, #b9fbc0, #98f5e1)">Fresh Mint 💚</option>
+      <option value="linear-gradient(135deg, #ffafcc, #ffc6ff)">Cotton Candy 💖</option>
+      <option value="linear-gradient(135deg, #fefae0, #faedcd)">Sunny Yellow 🌞</option>
+      <option value="linear-gradient(135deg, #fbc4ab, #ffdab9)">Peach Glow 🍑</option>
+    </select>
+    <br>
+    <button id="changeBtn" onclick="changeBackground()">Change Background</button>
+    <button id="resetBtn" onclick="resetBackground()">Reset</button>
+  </div>
+
+  <footer>Made with 💕 and JavaScript magic!</footer>
+</body>
+</html>

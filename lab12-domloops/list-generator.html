@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🍉 Interactive Fruit List</title>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", function() {
+      const fruitList = document.getElementById("fruit-list");
+      const fruitInput = document.getElementById("fruit-input");
+      const addButton = document.getElementById("add-btn");
+
+      const emojiMap = {
+        apple: "🍎",
+        banana: "🍌",
+        orange: "🍊",
+        mango: "🥭",
+        grape: "🍇",
+        strawberry: "🍓",
+        watermelon: "🍉",
+        lemon: "🍋",
+        pineapple: "🍍"
+      };
+
+      function addFruit(name) {
+        if (name.trim() === "") {
+          alert("⚠️ Please enter a fruit name!");
+          return;
+        }
+
+        const li = document.createElement("li");
+        const lower = name.toLowerCase();
+        const emoji = emojiMap[lower] || "🥝";
+        li.innerHTML = `
+          <span class="fruit-name">${emoji} ${name}</span>
+          <button class="delete-btn">❌</button>
+        `;
+
+        li.querySelector(".delete-btn").addEventListener("click", () => {
+          li.classList.add("fade-out");
+          setTimeout(() => li.remove(), 300);
+        });
+
+        fruitList.appendChild(li);
+        fruitInput.value = "";
+      }
+
+      addButton.addEventListener("click", () => addFruit(fruitInput.value));
+      fruitInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") addFruit(fruitInput.value);
+      });
+
+      const initialFruits = ["Apple", "Banana", "Orange"];
+      initialFruits.forEach(addFruit);
+    });
+  </script>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffe5ec, #ffc8dd, #ffafcc);
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      padding-top: 70px;
+      color: #5c3c2d;
+      overflow-x: hidden;
+      animation: fadeIn 1.2s ease;
+    }
+
+    h2 {
+      font-size: 2.2em;
+      color: #6d597a;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 2px #fff;
+    }
+
+    .container {
+      background: #fff9f4;
+      margin: auto;
+      width: 60%;
+      max-width: 500px;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .container:hover {
+      transform: scale(1.02);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    li {
+      background-color: #ffd6ff;
+      margin: 10px auto;
+      padding: 12px 15px;
+      width: 80%;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.1em;
+      transition: all 0.3s ease-in-out;
+      animation: slideIn 0.5s ease;
+    }
+
+    li:hover {
+      background-color: #cdb4db;
+      transform: scale(1.05);
+    }
+
+    .delete-btn {
+      background-color: #ff6b6b;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      font-size: 0.9em;
+      padding: 5px 10px;
+      transition: 0.3s;
+    }
+
+    .delete-btn:hover {
+      background-color: #d00000;
+    }
+
+    .fade-out {
+      opacity: 0;
+      transform: translateX(20px);
+      transition: all 0.3s ease-out;
+    }
+
+    input {
+      padding: 10px;
+      border-radius: 10px;
+      border: 2px solid #cdb4db;
+      width: 60%;
+      outline: none;
+      font-size: 1em;
+      transition: all 0.3s;
+    }
+
+    input:focus {
+      border-color: #ffb703;
+      box-shadow: 0 0 5px #ffb703;
+    }
+
+    button#add-btn {
+      background-color: #b5838d;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-left: 10px;
+      transition: 0.3s;
+    }
+
+    button#add-btn:hover {
+      background-color: #6d597a;
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🍓 My Fancy Fruit List 🍍</h2>
+    <input type="text" id="fruit-input" placeholder="Enter a fruit name...">
+    <button id="add-btn">Add 🍋</button>
+    <ul id="fruit-list"></ul>
+  </div>
+</body>
+</html>

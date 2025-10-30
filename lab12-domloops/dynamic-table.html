@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🍉 Dynamic Fruit Inventory</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .frame-box {
+      background-color: #fff8e7;
+      border: 3px solid #b08968;
+      border-radius: 20px;
+      padding: 40px;
+      width: 80%;
+      max-width: 800px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+      animation: popIn 0.8s ease;
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    h2 {
+      text-align: center;
+      color: #6d4c41;
+      font-size: 28px;
+      margin-bottom: 25px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 10px;
+      animation: fadeIn 1s ease;
+    }
+
+    th, td {
+      padding: 15px;
+      border: 1px solid #e6ccb2;
+      text-align: center;
+    }
+
+    th {
+      background-color: #d4a373;
+      color: #fff;
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+
+    tr:nth-child(even) {
+      background-color: #faedcd;
+    }
+
+    tr:nth-child(odd) {
+      background-color: #fefae0;
+    }
+
+    tr:hover {
+      background-color: #ffd6a5;
+      transform: scale(1.02);
+      transition: all 0.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .input-area {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    input {
+      padding: 10px;
+      margin: 5px;
+      border: 2px solid #b08968;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #ffb703;
+      box-shadow: 0 0 5px #ffb703;
+    }
+
+    button {
+      background-color: #d4a373;
+      border: none;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #b07b48;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="frame-box">
+    <h2>🍓 Dynamic Fruit Inventory Table 🍍</h2>
+
+    <div id="table-container"></div>
+
+    <div class="input-area">
+      <input type="text" id="fruitName" placeholder="Enter fruit name 🍎">
+      <input type="number" id="fruitQty" placeholder="Quantity">
+      <input type="number" id="fruitPrice" placeholder="Price">
+      <button onclick="addFruit()">➕ Add Fruit</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const data = [
+        { name: "🍎 Apple", quantity: 10, price: 25 },
+        { name: "🍌 Banana", quantity: 5, price: 15 },
+        { name: "🍊 Orange", quantity: 8, price: 20 },
+        { name: "🍇 Grapes", quantity: 12, price: 30 }
+      ];
+
+      const tableContainer = document.getElementById("table-container");
+
+      function renderTable() {
+        tableContainer.innerHTML = "";
+        const table = document.createElement("table");
+        const header = document.createElement("tr");
+        header.innerHTML = "<th>Fruit</th><th>Quantity</th><th>Price (₱)</th><th>Total (₱)</th>";
+        table.appendChild(header);
+
+        data.forEach(fruit => {
+          const total = fruit.quantity * fruit.price;
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${fruit.name}</td>
+            <td>${fruit.quantity}</td>
+            <td>${fruit.price}</td>
+            <td>${total}</td>
+          `;
+          table.appendChild(row);
+        });
+
+        tableContainer.appendChild(table);
+      }
+
+      renderTable();
+
+      window.addFruit = function() {
+        const name = document.getElementById("fruitName").value.trim();
+        const quantity = parseInt(document.getElementById("fruitQty").value);
+        const price = parseInt(document.getElementById("fruitPrice").value);
+
+        if (name && quantity > 0 && price > 0) {
+          data.push({ name: name, quantity: quantity, price: price });
+          renderTable();
+          document.getElementById("fruitName").value = "";
+          document.getElementById("fruitQty").value = "";
+          document.getElementById("fruitPrice").value = "";
+        } else {
+          alert("⚠️ Please fill out all fields with valid values!");
+        }
+      };
+    });
+  </script>
+</body>
+</html>

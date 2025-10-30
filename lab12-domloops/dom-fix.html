@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>✨ JavaScript Debug Lab ✨</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #fcefee, #e2f0cb, #cde7f0);
+      background-size: 300% 300%;
+      animation: bgShift 8s infinite alternate;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding-top: 100px;
+      color: #3e2723;
+      transition: background-color 0.5s ease;
+    }
+
+    @keyframes bgShift {
+      0% { background-position: left top; }
+      100% { background-position: right bottom; }
+    }
+
+    h2 {
+      background: #bde0fe;
+      color: #3e2723;
+      padding: 15px;
+      border-radius: 15px;
+      width: 70%;
+      margin: 0 auto 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      font-size: 1.8em;
+      letter-spacing: 1px;
+    }
+
+    #title {
+      font-size: 2.2em;
+      color: #264653;
+      margin-bottom: 30px;
+      transition: transform 0.5s, color 0.5s;
+    }
+
+    button {
+      background-color: #a2d2ff;
+      color: #3e2723;
+      border: none;
+      border-radius: 12px;
+      padding: 12px 25px;
+      font-size: 1.1em;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 10px;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #bde0fe;
+      transform: scale(1.1);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.7);
+      width: 60%;
+      margin: auto;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+
+    .note {
+      font-size: 0.9em;
+      color: #5a5a5a;
+      margin-top: 20px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Activity 2: JavaScript Debug Lab </h2>
+
+    <h1 id="title">Welcome, Debugger!</h1>
+    <button onclick="changeTitle()">Change Title</button>
+    <button onclick="resetTitle()">Reset Title</button>
+    <button onclick="randomColor()">Surprise Me 🎨</button>
+
+    <p class="note">Hint: Try clicking all the buttons to see what happens!</p>
+  </div>
+
+  <script>
+    function changeTitle() {
+      const title = document.getElementById("title");
+      title.innerHTML = "✅ Title Updated Successfully!";
+      title.style.color = "#0077b6";
+      title.style.transform = "rotate(-2deg) scale(1.1)";
+    }
+
+    function resetTitle() {
+      const title = document.getElementById("title");
+      title.innerHTML = "Welcome, Debugger!";
+      title.style.color = "#264653";
+      title.style.transform = "rotate(0) scale(1)";
+    }
+
+    function randomColor() {
+      const randomColors = ["#ffc8dd", "#ffafcc", "#a2d2ff", "#cdb4db", "#e9edc9"];
+      const random = randomColors[Math.floor(Math.random() * randomColors.length)];
+      document.body.style.background = random;
+    }
+  </script>
+</body>
+</html>
