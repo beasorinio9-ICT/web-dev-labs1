@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>💜 Form Event - Thank You Message 💜</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #e6d6ff, #fff4ff);
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .frame {
+      background-color: #fff;
+      border-radius: 20px;
+      width: 380px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(128, 0, 128, 0.3);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h2 {
+      color: #7a0ed9;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    label {
+      font-size: 16px;
+      color: #444;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input {
+      padding: 12px;
+      margin-bottom: 20px;
+      width: 85%;
+      border-radius: 10px;
+      border: 2px solid #c9a1ff;
+      font-size: 15px;
+      transition: 0.3s;
+      text-align: center;
+    }
+
+    input:focus {
+      border-color: #7a0ed9;
+      outline: none;
+      box-shadow: 0 0 10px #cba6ff;
+    }
+
+    button {
+      background: linear-gradient(45deg, #7a0ed9, #b374ff);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background: linear-gradient(45deg, #5e00a1, #9d6eff);
+    }
+
+    /* Popup message */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.8);
+      background-color: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      width: 300px;
+      animation: popUp 0.4s ease forwards;
+    }
+
+    .popup h3 {
+      color: #7a0ed9;
+      margin-bottom: 15px;
+      font-size: 22px;
+    }
+
+    .popup p {
+      color: #444;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .close-btn {
+      background-color: #7a0ed9;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .close-btn:hover {
+      background-color: #5b009f;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes popUp {
+      to { transform: translate(-50%, -50%) scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="frame">
+    <h2>💜 Activity 6: Thank You Message 💜</h2>
+    <label for="name">Enter your name:</label>
+    <input type="text" id="name" placeholder="Your name here...">
+    <button onclick="sayThanks()">Submit</button>
+  </div>
+
+  <div id="popup" class="popup">
+    <h3>🎉 Thank You!</h3>
+    <p id="popupMsg"></p>
+    <button class="close-btn" onclick="closePopup()">Close</button>
+  </div>
+
+  <script>
+    function sayThanks() {
+      const userName = document.getElementById("name").value.trim();
+      const popup = document.getElementById("popup");
+      const msg = document.getElementById("popupMsg");
+
+      if (userName === "") {
+        alert("Please enter your name before submitting 💜");
+        return;
+      }
+
+      msg.textContent = `Thank you, ${userName}! You did a wonderful job 💫`;
+      popup.style.display = "block";
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+      document.getElementById("name").value = "";
+    }
+  </script>
+
+</body>
+</html>

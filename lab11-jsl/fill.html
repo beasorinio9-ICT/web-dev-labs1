@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Fill in the Blanks Activity </title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #fdfbfb, #ebedee);
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 40px;
+      text-align: center;
+      color: #333;
+    }
+
+    h1 {
+      color: #2b2b2b;
+      font-size: 32px;
+      margin-bottom: 10px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    p.instructions {
+      color: #555;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .quiz-box {
+      background-color: #ffffff;
+      display: inline-block;
+      padding: 25px 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      animation: slideUp 1.2s ease;
+    }
+
+    .sentence {
+      font-size: 18px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    input {
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      padding: 5px 10px;
+      font-size: 16px;
+      width: 150px;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #6dd47e;
+      outline: none;
+      box-shadow: 0 0 8px #6dd47e;
+    }
+
+    button {
+      background: linear-gradient(45deg, #6dd47e, #4caf50);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 18px;
+      margin-top: 15px;
+      transition: all 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(45deg, #5fc36c, #3b9c42);
+    }
+
+    #result {
+      margin-top: 25px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1> Fill in the Blanks Activity </h1>
+  <p class="instructions">Type the correct words in the blanks and test your knowledge!</p>
+
+  <div class="quiz-box">
+    <div class="sentence">
+      1️⃣ The <input type="text" id="q1" placeholder="noun"> jumps over the <input type="text" id="q2" placeholder="noun">.
+    </div>
+    <div class="sentence">
+      2️⃣ JavaScript is a <input type="text" id="q3" placeholder="adjective"> programming language used for <input type="text" id="q4" placeholder="verb + ing"> websites.
+    </div>
+    <div class="sentence">
+      3️⃣ The sky is <input type="text" id="q5" placeholder="color"> on a sunny day.
+    </div>
+    <button onclick="checkAnswers()">Check Answers ✅</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function checkAnswers() {
+      let score = 0;
+      let total = 5;
+
+      let a1 = document.getElementById("q1").value.trim().toLowerCase();
+      let a2 = document.getElementById("q2").value.trim().toLowerCase();
+      let a3 = document.getElementById("q3").value.trim().toLowerCase();
+      let a4 = document.getElementById("q4").value.trim().toLowerCase();
+      let a5 = document.getElementById("q5").value.trim().toLowerCase();
+
+      if (a1 === "dog") score++;
+      if (a2 === "fence") score++;
+      if (a3 === "powerful" || a3 === "dynamic") score++;
+      if (a4 === "creating" || a4 === "building") score++;
+      if (a5 === "blue") score++;
+
+      let message = "";
+      if (score === total) {
+        message = "🏆 Perfect! You got all correct!";
+      } else if (score >= 3) {
+        message = "👏 Great job! You got " + score + " out of " + total + "!";
+      } else {
+        message = "💡 You got " + score + " out of " + total + ". Try again!";
+      }
+
+      document.getElementById("result").innerText = message;
+    }
+  </script>
+
+</body>
+</html>

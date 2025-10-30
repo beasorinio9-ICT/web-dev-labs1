@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Activity 1 - Basic JS Syntax</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #f9e9ff, #d6eaff);
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      color: #333;
+    }
+
+    h2 {
+      font-size: 28px;
+      color: #6a0dad;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      animation: bounce 2s infinite alternate;
+    }
+
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+
+    button {
+      background-color: #6a0dad;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #500a9d;
+      transform: scale(1.05);
+    }
+
+    #output {
+      margin-top: 25px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      padding: 20px;
+      width: 350px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 16px;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+  <h2>💡 Activity 1: Basic JavaScript Syntax 💻</h2>
+  <p>Click the button below to run your JavaScript magic! ✨</p>
+  <button onclick="runJS()">Run Script</button>
+
+  <div id="output"></div>
+
+  <script>
+    function runJS() {
+      let num1 = 10;
+      let num2 = 5;
+      let sum = num1 + num2;
+      let message = `
+        🎉 Welcome to the JavaScript Playground! <br><br>
+        🔹 num1 = ${num1}<br>
+        🔹 num2 = ${num2}<br><br>
+        ➕ The sum is <strong>${sum}</strong><br><br>
+        🌟 Great job exploring basic syntax! 🌟
+      `;
+      document.getElementById("output").innerHTML = message;
+    }
+  </script>
+</body>
+</html>
