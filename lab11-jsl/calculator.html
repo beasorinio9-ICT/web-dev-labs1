@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>✨ Simple Calculator ✨</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #fff6b7, #f6416c);
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .calculator {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 300px;
+      transition: 0.3s;
+    }
+
+    .calculator:hover {
+      transform: scale(1.02);
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      color: #333;
+      font-size: 22px;
+    }
+
+    input {
+      width: 85%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      font-size: 16px;
+      text-align: right;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    button {
+      padding: 15px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      background: #6dd47e;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.1s;
+    }
+
+    button:hover {
+      background: #4caf50;
+      transform: scale(1.05);
+    }
+
+    .operator {
+      background: #ffa931;
+    }
+
+    .operator:hover {
+      background: #ff8f00;
+    }
+
+    .equal {
+      background: #ff4b5c;
+      grid-column: span 2;
+    }
+
+    .equal:hover {
+      background: #e63b4c;
+    }
+
+    .clear {
+      background: #808080;
+      grid-column: span 2;
+    }
+
+    .clear:hover {
+      background: #666666;
+    }
+
+    #result {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 15px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h2>🧮 Activity 5: Real Calculator</h2>
+    <input type="text" id="display" readonly placeholder="0">
+    <div class="buttons">
+      <button onclick="appendNumber('7')">7</button>
+      <button onclick="appendNumber('8')">8</button>
+      <button onclick="appendNumber('9')">9</button>
+      <button class="operator" onclick="chooseOperation('/')">÷</button>
+
+      <button onclick="appendNumber('4')">4</button>
+      <button onclick="appendNumber('5')">5</button>
+      <button onclick="appendNumber('6')">6</button>
+      <button class="operator" onclick="chooseOperation('*')">×</button>
+
+      <button onclick="appendNumber('1')">1</button>
+      <button onclick="appendNumber('2')">2</button>
+      <button onclick="appendNumber('3')">3</button>
+      <button class="operator" onclick="chooseOperation('-')">−</button>
+
+      <button onclick="appendNumber('0')">0</button>
+      <button onclick="appendDot()">.</button>
+      <button class="equal" onclick="computeResult()">=</button>
+      <button class="operator" onclick="chooseOperation('+')">+</button>
+
+      <button class="clear" onclick="clearDisplay()">C</button>
+    </div>
+  </div>
+
+  <script>
+    let currentInput = '';
+    let previousInput = '';
+    let operation = undefined;
+
+    const display = document.getElementById('display');
+
+    function appendNumber(number) {
+      currentInput += number;
+      updateDisplay();
+    }
+
+    function appendDot() {
+      if (!currentInput.includes('.')) {
+        currentInput += '.';
+        updateDisplay();
+      }
+    }
+
+    function chooseOperation(op) {
+      if (currentInput === '') return;
+      if (previousInput !== '') {
+        computeResult();
+      }
+      operation = op;
+      previousInput = currentInput;
+      currentInput = '';
+    }
+
+    function computeResult() {
+      let result;
+      const prev = parseFloat(previousInput);
+      const curr = parseFloat(currentInput);
+
+      if (isNaN(prev) || isNaN(curr)) return;
+
+      switch (operation) {
+        case '+':
+          result = prev + curr;
+          break;
+        case '-':
+          result = prev - curr;
+          break;
+        case '*':
+          result = prev * curr;
+          break;
+        case '/':
+          result = curr === 0 ? "Error" : prev / curr;
+          break;
+        default:
+          return;
+      }
+
+      currentInput = result;
+      operation = undefined;
+      previousInput = '';
+      updateDisplay();
+    }
+
+    function clearDisplay() {
+      currentInput = '';
+      previousInput = '';
+      operation = undefined;
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      display.value = currentInput || previousInput || '0';
+    }
+
+    clearDisplay();
+  </script>
+</body>
+</html>
