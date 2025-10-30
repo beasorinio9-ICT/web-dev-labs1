@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>✨ Button Click Message ✨</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #fef6b8, #b5ff7d);
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      padding-top: 120px;
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    h2 {
+      font-size: 28px;
+      color: #2b2b2b;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    button {
+      padding: 14px 32px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(45deg, #9adf00, #5dbb00);
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease-in-out;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background: linear-gradient(45deg, #7bcc00, #489600);
+    }
+
+    /* Floating message box */
+    .message {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.8);
+      background-color: #ffffff;
+      color: #333;
+      padding: 30px 40px;
+      border-radius: 16px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+      font-size: 20px;
+      animation: popUp 0.4s ease forwards;
+    }
+
+    @keyframes popUp {
+      to {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Close button */
+    .close-btn {
+      margin-top: 15px;
+      background-color: #f64e60;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .close-btn:hover {
+      background-color: #d93b4e;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🌼 Activity 4: Button Click Message 🌼</h2>
+  <button id="clickBtn">Click Me!</button>
+
+  <div id="messageBox" class="message">
+    🎉 Thanks for clicking! <br> You made my day brighter! 🌞
+    <br>
+    <button class="close-btn" onclick="closeMessage()">Close</button>
+  </div>
+
+  <script>
+    const messageBox = document.getElementById('messageBox');
+    const clickBtn = document.getElementById('clickBtn');
+
+    clickBtn.addEventListener('click', () => {
+      messageBox.style.display = 'block';
+    });
+
+    function closeMessage() {
+      messageBox.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
