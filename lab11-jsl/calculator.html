@@ -40,7 +40,7 @@
       margin-bottom: 15px;
       border: 2px solid #ddd;
       border-radius: 10px;
-      font-size: 16px;
+      font-size: 20px;
       text-align: right;
     }
 
@@ -102,104 +102,79 @@
 </head>
 <body>
   <div class="calculator">
-    <h2>🧮 Activity 5: Real Calculator</h2>
+    <h2>🧮 Activity 5: Calculator</h2>
     <input type="text" id="display" readonly placeholder="0">
     <div class="buttons">
       <button onclick="appendNumber('7')">7</button>
       <button onclick="appendNumber('8')">8</button>
       <button onclick="appendNumber('9')">9</button>
-      <button class="operator" onclick="chooseOperation('/')">÷</button>
+      <button class="operator" onclick="appendOperator('/')">÷</button>
 
       <button onclick="appendNumber('4')">4</button>
       <button onclick="appendNumber('5')">5</button>
       <button onclick="appendNumber('6')">6</button>
-      <button class="operator" onclick="chooseOperation('*')">×</button>
+      <button class="operator" onclick="appendOperator('*')">×</button>
 
       <button onclick="appendNumber('1')">1</button>
       <button onclick="appendNumber('2')">2</button>
       <button onclick="appendNumber('3')">3</button>
-      <button class="operator" onclick="chooseOperation('-')">−</button>
+      <button class="operator" onclick="appendOperator('-')">−</button>
 
       <button onclick="appendNumber('0')">0</button>
       <button onclick="appendDot()">.</button>
       <button class="equal" onclick="computeResult()">=</button>
-      <button class="operator" onclick="chooseOperation('+')">+</button>
+      <button class="operator" onclick="appendOperator('+')">+</button>
 
       <button class="clear" onclick="clearDisplay()">C</button>
     </div>
   </div>
 
   <script>
-    let currentInput = '';
-    let previousInput = '';
-    let operation = undefined;
-
+    let expression = '';
     const display = document.getElementById('display');
 
     function appendNumber(number) {
-      currentInput += number;
+      expression += number;
+      updateDisplay();
+    }
+
+    function appendOperator(operator) {
+      if (expression === '') return;
+      const lastChar = expression.slice(-1);
+      // prevent double operators
+      if ('+-*/'.includes(lastChar)) return;
+      expression += operator;
       updateDisplay();
     }
 
     function appendDot() {
-      if (!currentInput.includes('.')) {
-        currentInput += '.';
+      const parts = expression.split(/[\+\-\*\/]/);
+      const lastPart = parts[parts.length - 1];
+      if (!lastPart.includes('.')) {
+        expression += '.';
         updateDisplay();
       }
     }
 
-    function chooseOperation(op) {
-      if (currentInput === '') return;
-      if (previousInput !== '') {
-        computeResult();
-      }
-      operation = op;
-      previousInput = currentInput;
-      currentInput = '';
-    }
-
     function computeResult() {
-      let result;
-      const prev = parseFloat(previousInput);
-      const curr = parseFloat(currentInput);
-
-      if (isNaN(prev) || isNaN(curr)) return;
-
-      switch (operation) {
-        case '+':
-          result = prev + curr;
-          break;
-        case '-':
-          result = prev - curr;
-          break;
-        case '*':
-          result = prev * curr;
-          break;
-        case '/':
-          result = curr === 0 ? "Error" : prev / curr;
-          break;
-        default:
-          return;
+      try {
+        let result = eval(expression);
+        display.value = result;
+        expression = result.toString();
+      } catch {
+        display.value = "Error";
+        expression = '';
       }
-
-      currentInput = result;
-      operation = undefined;
-      previousInput = '';
-      updateDisplay();
     }
 
     function clearDisplay() {
-      currentInput = '';
-      previousInput = '';
-      operation = undefined;
+      expression = '';
       updateDisplay();
     }
 
     function updateDisplay() {
-      display.value = currentInput || previousInput || '0';
+      display.value = expression || '0';
     }
-
-    clearDisplay();
   </script>
 </body>
 </html>
