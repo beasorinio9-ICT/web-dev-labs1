@@ -106,7 +106,7 @@
     <div class="sentence">
       3️⃣ The sky is <input type="text" id="q5" placeholder="color"> on a sunny day.
     </div>
-    <button onclick="checkAnswers()">Check Answers ✅</button>
+    <button onclick="checkAnswers()">Check Answers </button>
     <p id="result"></p>
   </div>
 
@@ -129,11 +129,11 @@
 
       let message = "";
       if (score === total) {
-        message = "🏆 Perfect! You got all correct!";
+        message = " Perfect! You got all correct!";
       } else if (score >= 3) {
-        message = "👏 Great job! You got " + score + " out of " + total + "!";
+        message = "Great job! You got " + score + " out of " + total + "!";
       } else {
-        message = "💡 You got " + score + " out of " + total + ". Try again!";
+        message = " You got " + score + " out of " + total + ". Try again!";
       }
 
       document.getElementById("result").innerText = message;

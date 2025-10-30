@@ -28,5 +28,5 @@ function changeTitle() {
     title.style.textShadow = "none";
   }, 600);
 
-  console.log("✅ Title changed to:", randomMessage);
+  console.log("Title changed to:", randomMessage);
 }
