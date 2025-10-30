@@ -1,13 +1,13 @@
 function changeTitle() {
   const title = document.getElementById("page-title");
 
-  // 🌟 Random fun messages
+  // Random fun messages
   const messages = [
-    "🚀 Title Updated Successfully!",
-    "🎉 JavaScript Magic Activated!",
-    "✨ The Page Just Got Better!",
+    " Title Updated Successfully!",
+    " JavaScript Magic Activated!",
+    " The Page Just Got Better!",
     "🔥 Boom! Dynamic Title Change!",
-    "🌈 Hello from the DOM World!"
+    " Hello from the DOM World!"
   ];
 
   //  Random color generator

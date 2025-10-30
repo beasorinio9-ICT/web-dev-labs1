@@ -1,9 +1,9 @@
-// 🌈 Fancy Fruit List Generator 🍎🍇🍉
+//  Fancy Fruit List Generator 
 
 // Array of fruits
 const fruits = ["Apple", "Banana", "Mango", "Orange", "Grapes", "Strawberry", "Watermelon", "Pineapple", "Lemon"];
 
-// Emoji map for automatic fruit icons 🍊
+// Emoji map for automatic fruit icons 
 const fruitEmojis = {
   apple: "🍎",
   banana: "🍌",
@@ -16,7 +16,7 @@ const fruitEmojis = {
   lemon: "🍋"
 };
 
-// 🎨 Function to generate a random pastel color
+// Function to generate a random pastel color
 function randomColor() {
   const colors = ["#ffd6ff", "#ffb5a7", "#bde0fe", "#caffbf", "#fefae0", "#faedcd", "#ffc8dd"];
   return colors[Math.floor(Math.random() * colors.length)];
@@ -28,7 +28,7 @@ const list = document.getElementById("fruit-list");
 // 🪄 Clear any existing items (optional)
 list.innerHTML = "";
 
-// 🍒 Create each fruit item dynamically with style and animation
+//  Create each fruit item dynamically with style and animation
 fruits.forEach(fruit => {
   const li = document.createElement("li");
   const emoji = fruitEmojis[fruit.toLowerCase()] || "🥝";
@@ -46,13 +46,13 @@ fruits.forEach(fruit => {
   li.style.opacity = "0";
   li.style.transform = "translateY(20px)";
   
-  // 🌟 Animation effect (fade-in one by one)
+  // Animation effect (fade-in one by one)
   setTimeout(() => {
     li.style.opacity = "1";
     li.style.transform = "translateY(0)";
   }, 200 * fruits.indexOf(fruit));
 
-  // 🍏 Hover interaction
+  // Hover interaction
   li.addEventListener("mouseover", () => {
     li.style.transform = "scale(1.05)";
     li.style.boxShadow = "0 4px 10px rgba(0,0,0,0.2)";
@@ -63,7 +63,7 @@ fruits.forEach(fruit => {
     li.style.boxShadow = "none";
   });
 
-  // 🍋 Add click interaction (removes fruit)
+  // dd click interaction (removes fruit)
   li.addEventListener("click", () => {
     li.style.opacity = "0";
     li.style.transform = "translateX(50px)";
