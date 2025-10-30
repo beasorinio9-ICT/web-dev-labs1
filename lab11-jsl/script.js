@@ -3,7 +3,7 @@ let num2 = 5;
 
 console.log("%c Welcome to the JavaScript Fun Zone! ", "color: purple; font-size: 16px; font-weight: bold;");
 
-console.log("%cLet's do some quick math magic! ✨", "color: teal; font-size: 14px;");
+console.log("%cLet's do some quick math magic! ", "color: teal; font-size: 14px;");
 
 let sum = num1 + num2;
 let difference = num1 - num2;
@@ -18,4 +18,4 @@ console.log("%c➖ Difference: " + difference, "color: red;");
 console.log("%c✖️ Product: " + product, "color: blue;");
 console.log("%c➗ Quotient: " + quotient, "color: magenta;");
 
-console.log("%c🌟 Thanks for trying this mini math adventure! 🌟", "color: purple; font-weight: bold;");
+console.log("Thanks for trying this mini math adventure! ", "color: purple; font-weight: bold;");
