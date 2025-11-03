@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity 1 - Creative Form</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #FAD0C4, #FFD1FF);
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h2 {
+      color: #333;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    form {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    form:hover {
+      transform: scale(1.03);
+    }
+
+    input {
+      padding: 10px 15px;
+      margin: 10px 0;
+      width: 250px;
+      border: 2px solid #FFD6E0;
+      border-radius: 8px;
+      outline: none;
+      transition: 0.3s;
+      font-size: 14px;
+    }
+
+    input:focus {
+      border-color: #FF8FAB;
+      box-shadow: 0 0 8px #FFB5C2;
+    }
+
+    button {
+      background: #FF8FAB;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: bold;
+      margin-top: 10px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background: #FF6B81;
+      transform: scale(1.05);
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #444;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    /* Subtle fade animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+  </style>
+</head>
+<body>
+
+  <h2> Activity 1: Simple & Stylish Form </h2>
+
+  <form id="myForm">
+    <input type="text" id="name" placeholder=" Enter your name" required><br>
+    <input type="email" id="email" placeholder="Enter your email" required><br>
+    <button type="submit">Submit </button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    document.getElementById("myForm").onsubmit = function(event) {
+      event.preventDefault();
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+      
+      if(name && email){
+        document.getElementById("result").innerHTML = `
+          <p><strong> Thank you, ${name}!</strong><br>
+          We’ve received your email: <em>${email}</em> </p>`;
+      } else {
+        document.getElementById("result").innerHTML = 
+          `<p style="color:red;">⚠️ Please fill out all fields.</p>`;
+      }
+
+      // Add fade effect
+      document.getElementById("result").style.animation = "fadeInUp 0.8s ease-in-out";
+    };
+  </script>
+
+</body>
+</html>
