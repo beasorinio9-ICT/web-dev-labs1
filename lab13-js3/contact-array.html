@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity 4 - Creative Contact Array</title>
+  <style>
+    /* Background and layout */
+    body {
+      background: linear-gradient(135deg, #FAD2E1, #FFC6FF, #DCD6F7);
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding-top: 60px;
+    }
+
+    h2 {
+      color: #333;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      margin-bottom: 15px;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    /* Form box styling */
+    form {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      display: inline-block;
+      margin-bottom: 30px;
+      animation: fadeIn 1.2s ease-in-out;
+      transition: transform 0.3s ease;
+    }
+
+    form:hover {
+      transform: scale(1.03);
+    }
+
+    input, textarea {
+      margin: 8px 0;
+      padding: 10px 15px;
+      width: 250px;
+      border-radius: 8px;
+      border: 2px solid #FFD1DC;
+      outline: none;
+      font-size: 14px;
+      transition: 0.3s;
+      resize: none;
+      font-family: inherit;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #FFB7B2;
+      box-shadow: 0 0 10px #FFB7B2;
+    }
+
+    button {
+      background: linear-gradient(135deg, #FFB7B2, #FFDAC1);
+      border: none;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: bold;
+      margin-top: 10px;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #FF9AA2, #FFB7B2);
+      transform: scale(1.05);
+    }
+
+    /*  Message section */
+    h3 {
+      margin-top: 20px;
+      color: #333;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      max-width: 400px;
+      margin: 20px auto;
+    }
+
+    li {
+      background: #fff;
+      margin: 10px auto;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      font-size: 15px;
+      text-align: left;
+      border-left: 5px solid #FFB7B2;
+      animation: fadeInUp 0.6s ease-in-out;
+    }
+
+    li strong {
+      color: #FF7E79;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+  </style>
+</head>
+<body>
+
+  <h2>Activity 4: Cute Contact Form with Message Array </h2>
+
+  <form id="contactForm">
+    <input type="text" id="name" placeholder=" Your Name" required><br>
+    <textarea id="message" placeholder="Your Message" rows="4" required></textarea><br>
+    <button type="submit">Send Message </button>
+  </form>
+
+  <h3>Submitted Messages</h3>
+  <ul id="output"></ul>
+
+  <script>
+    const contacts = [];
+
+    document.getElementById("contactForm").onsubmit = function(event) {
+      event.preventDefault();
+
+      let name = document.getElementById("name").value.trim();
+      let msg = document.getElementById("message").value.trim();
+      let output = document.getElementById("output");
+
+      if (name === "" || msg === "") {
+        alert("⚠️ Please fill out all fields before sending!");
+        return;
+      }
+
+      contacts.push({ name, msg });
+
+      output.innerHTML = "";
+      contacts.forEach((c) => {
+        let li = document.createElement("li");
+        li.innerHTML = `<strong>${c.name}</strong> says:<br> ${c.msg}`;
+        output.appendChild(li);
+      });
+
+      document.getElementById("contactForm").reset();
+    };
+  </script>
+
+</body>
+</html>

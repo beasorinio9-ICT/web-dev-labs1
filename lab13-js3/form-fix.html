@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity 2 - Creative Form Validation</title>
+  <style>
+    /* Background and General Style */
+    body {
+      background: linear-gradient(135deg, #E4F9F5, #A6E3E9, #CBF1F5);
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    /* Form Styling */
+    form {
+      background: #ffffff;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      display: inline-block;
+      animation: fadeIn 1.2s ease-in-out;
+      transition: transform 0.3s ease;
+    }
+
+    form:hover {
+      transform: scale(1.03);
+    }
+
+    input {
+      padding: 12px 15px;
+      margin: 10px 0;
+      width: 250px;
+      border: 2px solid #A6E3E9;
+      border-radius: 8px;
+      outline: none;
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+
+    input:focus {
+      border-color: #71C9CE;
+      box-shadow: 0 0 10px #71C9CE;
+    }
+
+    button {
+      background: linear-gradient(135deg, #71C9CE, #39A9CB);
+      border: none;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      margin-top: 5px;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #5BB8BF, #348AA7);
+      transform: scale(1.05);
+    }
+
+    /* Popup Style */
+    #popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      padding: 30px 50px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      animation: popIn 0.6s ease-in-out;
+    }
+
+    #popup button {
+      margin-top: 15px;
+      background: #71C9CE;
+      border: none;
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #popup button:hover {
+      background: #39A9CB;
+    }
+
+    /*  Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+  </style>
+</head>
+<body>
+
+  <h2>Activity 2: Creative Form Validation </h2>
+  <form onsubmit="return validateForm()">
+    <input type="text" id="name" placeholder=" Enter your name"><br>
+    <button type="submit">Submit </button>
+  </form>
+
+  <!-- Custom Popup Message -->
+  <div id="popup">
+    <p id="popupText"></p>
+    <button onclick="closePopup()">OK</button>
+  </div>
+
+  <script>
+    function validateForm() {
+      const name = document.getElementById("name").value.trim();
+      const popup = document.getElementById("popup");
+      const popupText = document.getElementById("popupText");
+
+      if (name === "") {
+        popupText.innerHTML = "⚠️ Please enter your name!";
+        popup.style.display = "block";
+        return false;
+      } else {
+        popupText.innerHTML = `🌸 Welcome, <strong>${name}</strong>! We're happy to see you.`;
+        popup.style.display = "block";
+        return false; // prevent form submission to keep popup visible
+      }
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+      document.getElementById("name").value = "";
+    }
+  </script>
+
+</body>
+</html>

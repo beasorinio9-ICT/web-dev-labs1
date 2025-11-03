@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity 3 - Creative Feedback Array</title>
+  <style>
+    /*  Background + Layout */
+    body {
+      background: linear-gradient(135deg, #FFF1C1, #FFD6A5, #FFB5E8);
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding-top: 60px;
+    }
+
+    h2 {
+      color: #333;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    /* Feedback Box */
+    .feedback-box {
+      background: #fff;
+      display: inline-block;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      animation: fadeIn 1.2s ease-in-out;
+      transition: transform 0.3s ease;
+    }
+
+    .feedback-box:hover {
+      transform: scale(1.02);
+    }
+
+    input {
+      padding: 10px;
+      border-radius: 8px;
+      border: 2px solid #FFD6A5;
+      width: 250px;
+      margin-top: 10px;
+      outline: none;
+      transition: 0.3s;
+      font-size: 14px;
+    }
+
+    input:focus {
+      border-color: #FFB5E8;
+      box-shadow: 0 0 10px #FFB5E8;
+    }
+
+    button {
+      background: linear-gradient(135deg, #FFB5E8, #FF9CEE);
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 600;
+      margin-left: 5px;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #FF8FAB, #FCA3CC);
+      transform: scale(1.05);
+    }
+
+    /*  Feedback List */
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    li {
+      background: #FFEBD1;
+      margin: 8px auto;
+      padding: 10px 15px;
+      border-radius: 10px;
+      width: 280px;
+      font-size: 15px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      animation: fadeInUp 0.5s ease-in-out;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Activity 3: Creative Feedback Board </h2>
+
+  <div class="feedback-box">
+    <p><strong>Share your feedback below!</strong></p>
+    <input type="text" id="feedbackInput" placeholder="Type your feedback here ">
+    <button onclick="addFeedback()">Submit</button>
+
+    <ul id="feedbackList"></ul>
+  </div>
+
+  <script>
+    let feedbacks = ["Great coffee! ☕", "Nice ambiance "];
+
+    function displayFeedbacks() {
+      const list = document.getElementById("feedbackList");
+      list.innerHTML = "";
+      feedbacks.forEach((fb, index) => {
+        let li = document.createElement("li");
+        li.textContent = fb;
+        list.appendChild(li);
+      });
+    }
+
+    function addFeedback() {
+      const input = document.getElementById("feedbackInput");
+      const feedback = input.value.trim();
+
+      if (feedback === "") {
+        alert("⚠️ Please write something before submitting!");
+        return;
+      }
+
+      feedbacks.push(feedback);
+      displayFeedbacks();
+      console.log("All Feedbacks:", feedbacks);
+      input.value = "";
+    }
+
+    // Show initial feedbacks
+    displayFeedbacks();
+  </script>
+
+</body>
+</html>

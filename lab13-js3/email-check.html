@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity 5 - Creative Email Checker</title>
+  <style>
+    /* Background and Layout */
+    body {
+      background: linear-gradient(135deg, #D0E6A5, #FFEE93, #FFD3B6);
+      text-align: center;
+      padding-top: 100px;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      height: 100vh;
+    }
+
+    h2 {
+      color: #333;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    /*  Form Styling */
+    form {
+      background: #fff;
+      display: inline-block;
+      padding: 35px 45px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      animation: fadeIn 1.2s ease-in-out;
+      transition: transform 0.3s ease;
+    }
+
+    form:hover {
+      transform: scale(1.03);
+    }
+
+    input {
+      margin: 10px;
+      padding: 12px 15px;
+      width: 250px;
+      border: 2px solid #FFD3B6;
+      border-radius: 8px;
+      font-size: 15px;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    input:focus {
+      border-color: #FFAAA5;
+      box-shadow: 0 0 10px #FFAAA5;
+    }
+
+    /*  Button Styling */
+    button {
+      background: linear-gradient(135deg, #FFAAA5, #FF8C94);
+      border: none;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 8px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #FF6B6B, #FF8C94);
+      transform: scale(1.05);
+    }
+
+    /*  Message Box */
+    #msg {
+      margin-top: 25px;
+      font-weight: bold;
+      font-size: 17px;
+      transition: all 0.5s ease;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    /*  Pop-up Message Animation */
+    .success {
+      color: #2ECC71;
+      text-shadow: 0 0 8px rgba(46, 204, 113, 0.4);
+      animation: popIn 0.6s ease-in-out;
+    }
+
+    .error {
+      color: #E74C3C;
+      text-shadow: 0 0 8px rgba(231, 76, 60, 0.3);
+      animation: shake 0.4s ease-in-out;
+    }
+
+    /*  Keyframe Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-8px); }
+      40%, 80% { transform: translateX(8px); }
+    }
+
+  </style>
+</head>
+<body>
+
+  <h2> Activity 5: Email Format Validator </h2>
+
+  <form id="emailForm">
+    <input type="email" id="email" placeholder="📧 Enter your email" required><br>
+    <button type="submit">Check Now </button>
+  </form>
+
+  <div id="msg"></div>
+
+  <script>
+    document.getElementById("emailForm").onsubmit = function(event) {
+      event.preventDefault();
+
+      let email = document.getElementById("email").value.trim();
+      let msg = document.getElementById("msg");
+
+      // Basic pattern check
+      let emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+
+      if (emailPattern.test(email)) {
+        msg.textContent = "✅ Email accepted! Looks good ";
+        msg.className = "success";
+      } else {
+        msg.textContent = "❌ Invalid email format! Please try again ";
+        msg.className = "error";
+      }
+    };
+  </script>
+
+</body>
+</html>
