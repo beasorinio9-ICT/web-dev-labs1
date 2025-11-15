@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Greeting Box - Girl Edition</title>
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #ffeef5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      text-align: center;
+      background: #ffffff;
+      padding: 35px;
+      border-radius: 18px;
+      box-shadow: 0px 6px 20px rgba(255, 128, 171, 0.25);
+      width: 360px;
+      border: 2px solid #ffb8d4;
+    }
+
+    h2 {
+      margin-bottom: 18px;
+      color: #d63384;
+      font-weight: 600;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ffb3cf;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #ff77ad;
+      box-shadow: 0 0 8px rgba(255, 119, 173, 0.4);
+    }
+
+    button {
+      background: #ff77ad;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #ff4f93;
+    }
+
+    #greetingBox {
+      margin-top: 20px;
+      padding: 20px;
+      background: #fff0f6;
+      border-radius: 12px;
+      border: 1px solid #ffb8d4;
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+
+    #message {
+      font-size: 17px;
+      font-weight: bold;
+      color: #c21868;
+    }
+
+    #subMessage {
+      font-size: 14px;
+      color: #a64d79;
+      margin-top: 6px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="container">
+    <h2> Interactive Greeting Box </h2>
+
+    <input type="text" id="studentName" placeholder="Enter your name, girl...">
+
+    <button onclick="showGreeting()">Show Greeting</button>
+
+    <div id="greetingBox">
+      <p id="message"></p>
+      <p id="subMessage"></p>
+      <button onclick="changeGreeting()">Change Greeting </button>
+    </div>
+  </div>
+
+
+  <script>
+    const greetings = [
+      "Welcome to Web Development! ",
+      "Hi queen! Ready to code? ",
+      "Coding is power, girl! ",
+      "Your tech journey starts now! ",
+      "Shine bright in programming! ",
+      "Slay that code, sis! "
+    ];
+
+    const subLines = [
+      "Explore the coding life, beautiful! 💗",
+      "Keep going — future girl in tech! ",
+      "You are meant for greatness! ",
+      "Confidence + Code = QUEEN 👑",
+      "Good luck! Ikaw na talaga! ",
+      "Believe in your skills, girl! "
+    ];
+
+    function showGreeting() {
+      let name = document.getElementById("studentName").value.trim();
+      if (name === "") {
+        alert("Please enter your name, sis!");
+        return;
+      }
+
+      const greet = greetings[Math.floor(Math.random() * greetings.length)];
+      const sub = subLines[Math.floor(Math.random() * subLines.length)];
+
+      document.getElementById("message").textContent = `Hello ${name}! ${greet}`;
+      document.getElementById("subMessage").textContent = sub;
+
+      document.getElementById("greetingBox").style.display = "block";
+    }
+
+    function changeGreeting() {
+      let name = document.getElementById("studentName").value.trim();
+
+      const greet = greetings[Math.floor(Math.random() * greetings.length)];
+      const sub = subLines[Math.floor(Math.random() * subLines.length)];
+
+      document.getElementById("message").textContent = `Hello ${name}! ${greet}`;
+      document.getElementById("subMessage").textContent = sub;
+    }
+  </script>
+
+</body>
+</html>
