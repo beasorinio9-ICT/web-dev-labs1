@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Girly Digital Clock with Alarm ⏰💖</title>
+
+<style>
+    body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #ffe6f2, #ffd6ea);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    .clock-container {
+        text-align: center;
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 22px;
+        width: 350px;
+        box-shadow: 0px 8px 25px rgba(255, 115, 155, 0.35);
+        border: 3px solid #ffb3d9;
+    }
+
+    h2 {
+        color: #d63384;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+
+    #clock {
+        font-size: 45px;
+        font-weight: bold;
+        color: #ff4fa3;
+        margin-bottom: 5px;
+    }
+
+    #date {
+        font-size: 18px;
+        color: #b34d79;
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+
+    label {
+        color: #a64d79;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    input[type="time"] {
+        padding: 10px;
+        width: 100%;
+        margin-top: 8px;
+        border-radius: 10px;
+        border: 2px solid #ffb3cf;
+        outline: none;
+        font-size: 16px;
+    }
+
+    input:focus {
+        border-color: #ff77ad;
+        box-shadow: 0 0 8px rgba(255, 119, 173, 0.4);
+    }
+
+    button {
+        width: 100%;
+        margin-top: 15px;
+        padding: 10px;
+        background: #ff77ad;
+        border: none;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: 0.25s ease;
+    }
+
+    button:hover {
+        background: #ff4f93;
+    }
+
+    #status {
+        margin-top: 10px;
+        color: #b0306a;
+        font-size: 14px;
+        font-weight: 500;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="clock-container">
+    <h2> Girly Digital Clock </h2>
+
+    <div id="clock">00:00:00</div>
+    <div id="date">Loading date...</div>
+
+    <label for="alarmTime">⏰ Set Alarm:</label>
+    <input type="time" id="alarmTime">
+
+    <button onclick="setAlarm()">Set Alarm</button>
+    <button onclick="clearAlarm()">Clear Alarm</button>
+
+    <p id="status"></p>
+</div>
+
+<!-- Alarm sound -->
+<audio id="alarmSound">
+    <source src="song/KAMIKAZEE - AGIMAT.mp4" type="audio/mpeg">
+  
+</audio>
+
+
+<script>
+    let alarmTime = null;
+
+    // Update Clock & Date
+    function updateClock() {
+        const now = new Date();
+
+        // Time
+        let h = now.getHours().toString().padStart(2, "0");
+        let m = now.getMinutes().toString().padStart(2, "0");
+        let s = now.getSeconds().toString().padStart(2, "0");
+
+        document.getElementById("clock").textContent = `${h}:${m}:${s}`;
+
+        // Date
+        const options = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
+        document.getElementById("date").textContent = now.toLocaleDateString("en-US", options);
+
+        // Alarm Check
+        if (`${h}:${m}` === alarmTime) {
+            document.getElementById("status").innerText = " Alarm Ringing! Wake up, girl! ";
+            document.getElementById("alarmSound").play();
+        }
+    }
+
+    setInterval(updateClock, 1000);
+
+    function setAlarm() {
+        const input = document.getElementById("alarmTime").value;
+        if (!input) {
+            alert("Please choose a time, bhie! ");
+            return;
+        }
+        alarmTime = input;
+        document.getElementById("status").innerText = `Alarm set for ${alarmTime} `;
+    }
+
+    function clearAlarm() {
+        alarmTime = null;
+        document.getElementById("status").innerText = "Alarm cleared ";
+        const sound = document.getElementById("alarmSound");
+        sound.pause();
+        sound.currentTime = 0;
+    }
+</script>
+
+</body>
+</html>
